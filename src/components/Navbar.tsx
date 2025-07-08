@@ -137,8 +137,7 @@ export const NavItems = ({ items, className, onItemClick }: NavItemsProps) => {
           {hovered === idx && (
             <motion.div
               layoutId="hovered"
-              className="absolute inset-0 h-full w-full rounded-full bg-gray-100 dark:bg-neutral-800"
-            />
+className="absolute inset-0 h-full w-full rounded-full bg-[radial-gradient(circle,#3593ce_0%,transparent_100%)] dark:bg-[radial-gradient(circle,#3593ce_0%,transparent_100%)]"        />
           )}
           <span className="relative z-20">{item.name}</span>
         </a>
