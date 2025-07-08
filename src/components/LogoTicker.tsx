@@ -48,7 +48,7 @@ export const LogoTicker = () => {
                 key={alt}
                 src={src}
                 alt={alt}
-                className="flex-none h-8 w-auto"
+                className="flex-none h-8 w-1"
               />
             ))}
           </motion.div>
