@@ -1,20 +1,36 @@
+"use client";
+import Image from "next/image";
+import ArrowWIcon from "../assets/icons/arrow-w.svg";
+import cursorImage from "../assets/images/cursor.png";
+import messageImage from "../assets/images/message.png";
+import { motion } from "framer-motion";
+
 export const Hero = () => {
   return (
-    <div className="bg-gradient-to-b from-black via-[#120d42] to-[#004091] text-white py-[72px] relative overflow-clip">
-      <div className="absolute h-[375px] w-[750px] lg:w-[2400px] lg:h-[1200px] rounded-[100%] bg-black left-1/2 -translate-x-1/2 border-[#004091] bg-[radial-gradient(closest-side,#000_82%,#3F8BEC)] top-[calc(100%-96px)]"></div>
-      <div className="container relative pt-24">
-        <div className="flex flex-col items-center justify-center text-center">
-          <h1 className="text-7xl sm:text-9xl tracking-tighter font-bold mt-8">
-            Your Business
-            <br /> supercharged with AI
-          </h1>
-          <p className="text-xl mt-8 max-w-2xl">
-            From smart automations to AI-driven tools, we design systems that
-            boost productivity, unlock growth, and make work feel effortless.
+    <div className="bg-[#242424] text-white bg-[linear-gradient(to_bottom,#242424,#022355_34%,#00378A_65%,#00AAF0_82%)] py-[72px] sm:py-24 relative overflow-clip">
+      <div className="absolute h-[200px] w-[3000px] sm:w-[3000px] sm:h-[200px] lg:w-[6000px] lg:h-[500px] bg-[#242424] left-1/2 -translate-x-1/2 top-[calc(100%-96px)] sm:top-[calc(100%-200px)]" 
+           style={{
+             clipPath: 'polygon(0% 100%, 50% 0%, 100% 100%)'
+           }}></div>
+      <div className="container relative mx-auto">
+        
+        <div className="flex justify-center  mt-8">
+          <div className="inline-flex relative">
+            <h1 className="text-7xl sm:text-8xl font-medium tracking-tighter text-center inline-flex">
+              Your Business
+              <br /> Supercharged by AI.
+            </h1>
+        
+          </div>
+        </div>
+        <div className="flex justify-center">
+          <p className="text-center text-xl mt-8 max-w-md">
+            From smart automations to AI-driven tools, we design systems that boost productivity, unlock growth, and make work feel effortless.
           </p>
-          <button className="mt-8 px-6 py-3 bg-white text-black rounded-lg hover:bg-gray-200 transition-colors">
-            Book a Call
-          </button>
+        </div>
+        <div className="flex justify-center mt-8">
+          <button className="bg-white text-black py-3 px-5 rounded-lg font-medium">
+Book a Call          </button>
         </div>
       </div>
     </div>
