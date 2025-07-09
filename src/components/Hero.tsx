@@ -21,7 +21,7 @@ export const Hero = () => {
           <div className="inline-flex relative">
             <h1 className="text-7xl sm:text-8xl font-medium tracking-tighter text-center inline-flex">
               Your Business
-              <br /> Supercharged by AI.
+              <br /> Supercharged by AI
             </h1>
         
           </div>
