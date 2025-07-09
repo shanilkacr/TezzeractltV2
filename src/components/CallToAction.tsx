@@ -2,66 +2,86 @@
 
 import TezzeractBrick from "../assets/images/tezzeractbrick.webp";
 import { useRouter } from "next/navigation";
-import { motion } from "framer-motion";
+import {
+  m,
+  motion,
+  useMotionTemplate,
+  useMotionValue,
+  useScroll,
+  useTransform,
+} from "framer-motion";
+import gridlines from "../assets/images/grid-line-grd.png";
+import { RefObject, useEffect, useRef, useCallback } from "react";
+
+const useRelativeMousePosition = (to: RefObject<HTMLElement>) => {
+  const mouseX = useMotionValue(0);
+  const mouseY = useMotionValue(0);
+
+  const updateMousePosition = useCallback((event: MouseEvent) => {
+    if (!to.current) return;
+    const { top, left } = to.current.getBoundingClientRect();
+    mouseX.set(event.clientX - left);
+    mouseY.set(event.clientY - top);
+  }, [mouseX, mouseY, to]);
+
+  useEffect(() => {
+    window.addEventListener("mousemove", updateMousePosition);
+
+    return () => {
+      window.removeEventListener("mousemove", updateMousePosition);
+    };
+  }, [updateMousePosition]);
+
+  return [mouseX, mouseY];
+};
 
 export const CallToAction = () => {
   const router = useRouter();
+  const sectionRef = useRef<HTMLElement>(null);
+  const borderdDivRef = useRef<HTMLDivElement>(null);
 
+  const [mouseX, mouseY] = useRelativeMousePosition(borderdDivRef);
+  
+  // Fixed the template - correct order is x, y coordinates
+  const maskImage = useMotionTemplate`radial-gradient(70% 70% at ${mouseX}px ${mouseY}px, black, transparent)`;
+  
   return (
-    <div className="bg-black text-white bg-[linear-gradient(to_bottom,#00AAF0_18%,#00378A_35%,#022355_66%,#000)] py-[72px] sm:py-24 relative overflow-clip">
-      {/* Radial gradient overlay at the top */}
-      <div className="absolute h-[350px] w-[1450px] sm:w-[1536px] sm:h-[420px] lg:w-[3000px] lg:h-[410px] rounded-[100%] bg-black left-1/2 -translate-x-1/2 border border-[#00AAF0] bg-[radial-gradient(closest-side,#000_82%,#00AAF0)] top-[calc(0%-300px)] sm:top-[calc(0%-350px)]"></div>
-      
-      {/* Background image positioned on the right */}
-      <div 
-        className="absolute inset-0 opacity-20"
-        style={{
-          backgroundImage: `url(${TezzeractBrick})`,
-          backgroundRepeat: "no-repeat",
-          backgroundPosition: "110% 50%",
-          backgroundSize: "50%",
-        }}
-      ></div>
+    <section className="text-white pb-10">
+      <div className="container mx-auto ">
+        <motion.div
+          ref={borderdDivRef}
+          className="border  border-white/15 py-[120px] rounded-xl overflow-hidden relative group"
+        >
+          <div
+            className="absolute inset-0 bg-[transparent] bg-blend-overlay [mask-image:radial-gradient(70%_70%_at_50%_50%,black,transparent)] group-hover:opacity-0 transition duration-700"
+            style={{ backgroundImage: `url(${gridlines.src})` }}
+          ></div>
 
-      <div className="container relative mx-auto">
-        <div className="flex justify-left">
-          <div className="w-[100%] md:w-[60%] lg:w-[50%] text-center">
-            <motion.h2 
-              className="text-5xl sm:text-7xl font-bold tracking-tighter text-left mb-8"
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6 }}
-            >
+          <motion.div
+            className="absolute inset-0 bg-[transparent] bg-blend-overlay opacity-0 group-hover:opacity-100 transition duration-700"
+            style={{ 
+              maskImage, 
+              backgroundImage: `url(${gridlines.src})` 
+            }}
+          ></motion.div>
+
+          <div className="relative">
+            <h2 className="text-5xl md:text-6xl mx-auto tracking-tighter font-medium text-center px-4 mt-5">
               Ready to Transform Your Business?
-            </motion.h2>
-
-            <motion.p 
-              className="text-left text-lg mt-8 max-w-2xl leading-relaxed"
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.2 }}
-            >
-              Don't let manual processes hold you back. Our automation experts are
-              ready to design a custom solution that will streamline your
+            </h2>
+            <p className="text-lg max-w-[1000px] md:text-xl text-center px-4 mt-4 mx-auto">
+              Don't let manual processes hold you back. Our automation experts
+              are ready to design a custom solution that will streamline your
               operations and accelerate your growth.
-            </motion.p>
-
-            <motion.div 
-              className="flex justify-left mt-8"
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.4 }}
-            >
-              <button
-                onClick={() => router.push("/book-a-call")}
-                className="bg-white text-black py-3 px-5 rounded-lg font-medium hover:bg-gray-100 transition-colors duration-300"
-              >
-                Book a Free Strategy Call
+            </p>
+            <div className="flex justify-center mt-6">
+              <button className="bg-white text-black py-3 px-5 rounded-lg font-medium">
+                Schedule an AI Strategy Call
               </button>
-            </motion.div>
+            </div>
           </div>
-        </div>
+        </motion.div>
       </div>
-    </div>
+    </section>
   );
 };

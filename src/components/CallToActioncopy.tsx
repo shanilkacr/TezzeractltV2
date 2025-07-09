@@ -43,17 +43,17 @@ export const CallToActioncopy = () => {
   const [mouseX, mouseY] = useRelativeMousePosition(borderdDivRef);
   
   // Fixed the template - correct order is x, y coordinates
-  const maskImage = useMotionTemplate`radial-gradient(50% 50% at ${mouseX}px ${mouseY}px, black, transparent)`;
+  const maskImage = useMotionTemplate`radial-gradient(70% 70% at ${mouseX}px ${mouseY}px, black, transparent)`;
   
   return (
     <section className="text-white pb-10">
       <div className="container mx-auto ">
         <motion.div
           ref={borderdDivRef}
-          className="border border-white/15 py-[120px] rounded-xl overflow-hidden relative group"
+          className="border bg-[#00378A] border-white/15 py-[120px] rounded-xl overflow-hidden relative group"
         >
           <div
-            className="absolute inset-0 bg-[rgb(53,147,206)] bg-blend-overlay [mask-image:radial-gradient(50%_50%_at_50%_50%,black,transparent)] group-hover:opacity-0 transition duration-700"
+            className="absolute inset-0 bg-[rgb(53,147,206)] bg-blend-overlay [mask-image:radial-gradient(70%_70%_at_50%_50%,black,transparent)] group-hover:opacity-0 transition duration-700"
             style={{ backgroundImage: `url(${gridlines.src})` }}
           ></div>
 

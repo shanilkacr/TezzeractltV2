@@ -9,10 +9,11 @@ export const ProductShowcase = () => {
     <section className="py-24">
       <div className="container mx-auto ">
         <div className="flex justify-center flex-col items-center  text-center">
-          <div className="text-6xl font-bold text-white text-center mt-10">
+          <div className="text-5xl font-medium text-white text-center mt-10">
             <span>
               Busywork is stealing your team's{" "}
-              <WordRotate words={["time.", "money.", "resources."]} />
+              {/* <WordRotate words={["time.", "money.", "resources."]} /> */}
+              <br/>
               <AuroraText>Let's fix that</AuroraText>
             </span>
           </div>

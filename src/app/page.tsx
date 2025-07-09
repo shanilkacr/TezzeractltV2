@@ -9,6 +9,7 @@ import { Timeline } from "@/components/Timeline";
 import { CallToAction } from "@/components/CallToAction";
 import { CallToActioncopy } from "@/components/CallToActioncopy";
 
+
 import { Footer } from "@/components/Footer";
 import { IconBrandReact, IconGitBranch, IconRocket, IconWorld } from "@tabler/icons-react";
 import { useState } from "react";
@@ -121,7 +122,8 @@ export default function Home() {
       ),
     },
   ]}
-/>      <CallToActioncopy />
+/>      
+  <CallToAction />
       <Footer />
       </div>
     </>
