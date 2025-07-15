@@ -2,22 +2,33 @@
 
 import { Users, Zap, Palette, Package, MessageSquare, FileText } from "lucide-react";
 import { GlowingEffect } from "./GlowingEffect";
+import { AuroraText } from "./Auratext";
 
 export function GlowingEffectDemo() {
   return (
     <div className="container mx-auto px-4 max-w-4xl">
+      <div className="py-12 text-white">
+<h2 className="text-center font-bold text-5xl sm:text-6xl tracking-tighter">
+Transform Every Part of Your Business with AI          
+              </h2>
+              <div className="max-w-xl mx-auto">
+                <p className="text-center mt-5 text-xl text-white/70">
+                 From customer service to HR, AI helps teams do more with less, faster, smarter, and without burnout.
+                </p>
+              </div>
+      </div>
+      
       <div className="flex gap-3 lg:gap-3">
         {/* Left Column - 3 cards */}
         <div className="flex-1 flex flex-col gap-2 lg:gap-3">
           {/* HR Card - Medium */}
           <GridItem
             height="medium"
-            icon={<Users className="h-4 w-4 text-blue-400" />}
             category="Human Resources"
             title={
               <>
                 From onboarding to time-off tracking, automation saves{" "}
-                <span className="text-blue-400 font-bold text-3xl">40%</span> of the time spent on routine tasks.
+                <span className="text-blue-400 font-bold text-3xl"><AuroraText>40%</AuroraText></span> of the time spent on routine tasks.
               </>
             }
             description="AI can free your HR team from repetitive admin."
@@ -27,13 +38,12 @@ export function GlowingEffectDemo() {
           {/* Creatives Card - Medium */}
           <GridItem
             height="large"
-            icon={<Palette className="h-4 w-4 text-blue-400" />}
             category="Creatives & Advertising"
             title={
               <>
                 AI-generated visuals and copy see{" "}
-                <span className="text-pink-400 font-bold text-3xl">2.1x</span> more engagement and lower ad spend by{" "}
-                <span className="text-pink-400 font-bold text-3xl">40%</span>
+                <span className="text-pink-400 font-bold text-3xl"><AuroraText>2.1%</AuroraText></span> more engagement and lower ad spend by{" "}
+                <span className="text-pink-400 font-bold text-3xl"><AuroraText>40%</AuroraText></span>
               </>
             }
             description="AI produces ads that perform better, built in half the time."
@@ -47,12 +57,11 @@ export function GlowingEffectDemo() {
           {/* Operations Card - Large (Tall) */}
           <GridItem
             height="large"
-            icon={<Zap className="h-4 w-4 text-blue-400" />}
             category="Operations"
             title={
               <>
                 AI helps nurture prospects automatically, increasing sales opportunities by{" "}
-                <span className="text-pink-400 font-bold text-3xl">20%</span>
+                <span className="text-pink-400 font-bold text-3xl"><AuroraText>20%</AuroraText></span>
               </>
             }
             description="Follow up with every lead without a burnout."
@@ -62,12 +71,11 @@ export function GlowingEffectDemo() {
           {/* Operations Card - Medium */}
           <GridItem
             height="medium"
-            icon={<Package className="h-4 w-4 text-blue-400" />}
             category="Operations"
             title={
               <>
                 AI optimization can reduce excess inventory by{" "}
-                <span className="text-pink-400 font-bold text-3xl">20-50%</span>, while improving availability.
+                <span className="text-pink-400 font-bold text-3xl"><AuroraText>20%-50%</AuroraText></span>, while improving availability.
               </>
             }
             description="Smarter inventory, fewer headaches."
@@ -86,7 +94,7 @@ export function GlowingEffectDemo() {
             title={
               <>
                 Automated email and chat responses can reduce customer service costs by up to{" "}
-                <span className="text-pink-400 font-bold text-3xl">80%</span>
+                <span className="text-pink-400 font-bold text-3xl"><AuroraText>80%</AuroraText></span>
               </>
             }
             description=""
@@ -99,7 +107,7 @@ export function GlowingEffectDemo() {
             title={
               <>
                 AI cuts invoicing costs by{" "}
-                <span className="text-pink-400 font-bold text-3xl">80%</span>, and gets the job done in minutes not days.
+                <span className="text-pink-400 font-bold text-3xl"><AuroraText>80%</AuroraText></span>, and gets the job done in minutes not days.
               </>
             }
             description="With AI, no more late invoices or manual data entry."
@@ -112,14 +120,13 @@ export function GlowingEffectDemo() {
 
 interface GridItemProps {
   height: 'small' |'medium'| 'medium2' | 'large'| 'large2';
-  icon: React.ReactNode;
   category: string;
   title: React.ReactNode;
   description: string;
   source: string;
 }
 
-const GridItem = ({ height, icon, category, title, description, source }: GridItemProps) => {
+const GridItem = ({ height, category, title, description, source }: GridItemProps) => {
   const getHeightClass = () => {
     switch (height) {
       case 'small':
@@ -150,10 +157,8 @@ const GridItem = ({ height, icon, category, title, description, source }: GridIt
         <div className="border-0.75 relative flex h-full flex-col justify-between gap-6 overflow-hidden rounded-xl p-6 md:p-6">
           <div className="relative flex flex-1 flex-col gap-4">
             <div className="flex items-center gap-3">
-              <div className="w-fit rounded-lg border border-blue-600 bg-blue-900/20 p-2">
-                {icon}
-              </div>
-              <span className="text-sm font-medium text-blue-400 bg-blue-900/20 px-3 py-1 rounded-full border border-blue-600">
+            
+              <span className="text-sm font-medium text-blue-400 bg-blue-900/20 px-3 py-1 rounded-lg border border-blue-600">
                 {category}
               </span>
             </div>

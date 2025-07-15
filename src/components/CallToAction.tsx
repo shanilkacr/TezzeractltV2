@@ -47,7 +47,7 @@ export const CallToAction = () => {
   
   return (
     <section className="text-white pb-10">
-      <div className="container mx-auto ">
+      <div className="container  mx-auto ">
         <motion.div
           ref={borderdDivRef}
           className="border  border-white/15 py-[120px] rounded-xl overflow-hidden relative group"
