@@ -8,8 +8,6 @@ import { ProductShowcase } from "@/components/ProductShowcase";
 import { CallToAction } from "@/components/CallToAction";
 import { CallToActioncopy } from "@/components/CallToActioncopy";
 import { GlowingEffectDemo } from "@/components/GlowingDemo";
-
-
 import { Footer } from "@/components/Footer";
 import { IconBrandReact, IconGitBranch, IconRocket, IconWorld } from "@tabler/icons-react";
 import { useState } from "react";
@@ -18,7 +16,7 @@ const navItems = [
   { name: "Home", link: "/" },
   { name: "Features", link: "#features" },
   { name: "About Us", link: "#AboutUs" },
-  { name: "Contact", link: "#contact" }
+  { name: "Contact", link: "/contact" }
 ];
 
 export default function Home() {
@@ -65,13 +63,13 @@ export default function Home() {
       </div>
     </MobileNavMenu>
   </MobileNav>
-</Navbar>    <Hero />
+</Navbar>    
+      <Hero />
       <ProductShowcase />
-
       <LogoTicker />
       <Features />
- <GlowingEffectDemo />;
-  <CallToAction />
+      <GlowingEffectDemo />
+      <CallToAction />
       <Footer />
       </div>
     </>

@@ -42,7 +42,6 @@ export const CallToAction = () => {
 
   const [mouseX, mouseY] = useRelativeMousePosition(borderdDivRef);
   
-  // Fixed the template - correct order is x, y coordinates
   const maskImage = useMotionTemplate`radial-gradient(70% 70% at ${mouseX}px ${mouseY}px, black, transparent)`;
   
   return (
