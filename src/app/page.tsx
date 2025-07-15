@@ -26,7 +26,7 @@ export default function Home() {
 
   return (
     <>
-    <div className="bg-[#242424]">
+    <div className="bg-[#121212]">
  <Navbar>
   <NavBody>
     <NavbarLogo />
