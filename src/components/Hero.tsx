@@ -7,7 +7,7 @@ import interImage from "../assets/images/inter-icon.png";
 import messageImage from "../assets/images/message.png";
 import { motion } from "framer-motion";
 import { AuroraText } from "./Auratext";
-
+import { Meteors } from "./Meteors";
 
 export const Hero = () => {
   const aiImageRef = useRef(null);
@@ -32,20 +32,26 @@ export const Hero = () => {
   }, []);
 
   return (
-    <div className="bg-[#121212] text-white bg-[linear-gradient(to_bottom,#121212,#00398C_34%,#0060EB_65%,#01A6EB_82%)] py-[72px] sm:py-24 relative overflow-clip lg:h-[80vh] mt-[80px]">
-      <div className="absolute h-[500px] w-[1200px] sm:w-[3400px] sm:h-[1200px] lg:w-[3000px] lg:h-[1400px] sm:py-24 rounded-[100%] bg-[#121212] left-1/2 -translate-x-1/2 border-2  border-[#84DBFF] bg-[radial-gradient(closest-side,#121212_84%,#003D8F)] sm:top-[calc(100%-320px)] top-[calc(100%-100px)]" 
-           ></div>
-      <div className="container relative mx-auto">
-        
+    <div className="bg-[#121212] text-white bg-[radial-gradient(190%_200%_at_center_80%,#01A6EB_10%,#0060EB_15%,#00398C_25%,#121212_40%)] py-[72px] sm:py-[120px] relative overflow-hidden lg:h-[90vh]">
+      
+      {/* Main content circle/div - Higher z-index */}
+      <div className="absolute h-[500px] w-[1200px] sm:w-[3400px] sm:h-[1200px] lg:w-[3000px] lg:h-[1400px] sm:py-24 rounded-[100%] bg-[#121212] left-1/2 -translate-x-1/2 border-2 border-[#84DBFF] bg-[radial-gradient(closest-side,#121212_84%,#003D8F)] sm:top-[calc(100%-320px)] top-[calc(100%-100px)] z-20 ">
+        {/* Meteors Effect - Inside the circular div */}
+        <Meteors 
+          number={10} 
+        />
+      </div>
+
+      {/* Content container - Highest z-index */}
+      <div className="container relative mx-auto z-30">
         <div className="flex justify-center -mt-6">
           <div className="inline-flex relative">
             <h1 className="text-6xl sm:text-[104px] font-medium tracking-tighter text-center leading-tight">
-  <span className="">Your Business</span>
-  <span className="block">
-    Supercharged by <span className="font-bold"><AuroraText>AI</AuroraText></span>
-  </span>
-</h1>
-
+              <span className="">Your Business</span>
+              <span className="block">
+                Supercharged by <span className="font-bold"><AuroraText>AI</AuroraText></span>
+              </span>
+            </h1>
 
             <Image 
               ref={aiImageRef}

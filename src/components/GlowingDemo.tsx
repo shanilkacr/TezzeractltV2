@@ -3,25 +3,25 @@
 import { Users, Zap, Palette, Package, MessageSquare, FileText } from "lucide-react";
 import { GlowingEffect } from "./GlowingEffect";
 import { AuroraText } from "./Auratext";
+import { BackgroundBeams } from "./backgroundbeam";
+import { WarpBackground } from "./WarpBackground";
 
 export function GlowingEffectDemo() {
   return (
     <div className="container mx-auto px-4 max-w-4xl">
       <div className="py-12 text-white">
-<h2 className="text-center font-bold text-5xl sm:text-6xl tracking-tighter">
-Transform Every Part of Your Business with AI          
-              </h2>
-              <div className="max-w-xl mx-auto">
-                <p className="text-center mt-5 text-xl text-white/70">
-                 From customer service to HR, AI helps teams do more with less, faster, smarter, and without burnout.
-                </p>
-              </div>
+        <h2 className="text-center font-bold text-5xl sm:text-6xl tracking-tighter">
+          Transform Every Part of Your Business with AI          
+        </h2>
+        <div className="max-w-xl mx-auto">
+          <p className="text-center mt-5 text-xl text-white/70">
+            From customer service to HR, AI helps teams do more with less, faster, smarter, and without burnout.
+          </p>
+        </div>
       </div>
       
       <div className="flex gap-3 lg:gap-3">
-        {/* Left Column - 3 cards */}
         <div className="flex-1 flex flex-col gap-2 lg:gap-3">
-          {/* HR Card - Medium */}
           <GridItem
             height="medium"
             category="Human Resources"
@@ -36,25 +36,30 @@ Transform Every Part of Your Business with AI
           />
 
           {/* Creatives Card - Medium */}
+
           <GridItem
+          
             height="large"
             category="Creatives & Advertising"
             title={
               <>
+
                 AI-generated visuals and copy see{" "}
                 <span className="text-pink-400 font-bold text-3xl"><AuroraText>2.1%</AuroraText></span> more engagement and lower ad spend by{" "}
                 <span className="text-pink-400 font-bold text-3xl"><AuroraText>40%</AuroraText></span>
+                <WarpBackground className="absolute inset-0  z-0" />
+
               </>
+              
             }
             description="AI produces ads that perform better, built in half the time."
             source="Meta, 2023"
+            
           />
-         
+
         </div>
 
-        {/* Right Column - 3 cards */}
         <div className="flex-1 flex flex-col gap-2 lg:gap-3">
-          {/* Operations Card - Large (Tall) */}
           <GridItem
             height="large"
             category="Operations"
@@ -69,6 +74,7 @@ Transform Every Part of Your Business with AI
           />
 
           {/* Operations Card - Medium */}
+
           <GridItem
             height="medium"
             category="Operations"
@@ -81,15 +87,15 @@ Transform Every Part of Your Business with AI
             description="Smarter inventory, fewer headaches."
             source="BCG"
           />
-
-          {/* HR Card - Medium */}
-          
         </div>
       </div>
-      <div className="flex gap-3 mt-3">
-         <GridItem
+      
+      {/* Bottom row with adjustable widths */}
+      <div className="flex gap-3 mt-3 h-96">
+        {/* Customer Experience CARD - Takes up 60% of width */}
+        <div className="flex-[2]">
+          <GridItem
             height="small"
-            icon={<MessageSquare className="h-4 w-4 text-blue-400" />}
             category="Customer Experience"
             title={
               <>
@@ -100,19 +106,24 @@ Transform Every Part of Your Business with AI
             description=""
             source="IBM"
           />
+        </div>
+        
+        {/* HR Card - Takes up 40% of width */}
+        <div className="flex-[5]">
           <GridItem 
             height="small"
-            icon={<FileText className="h-4 w-4 text-blue-400" />}
             category="Human Resources"
             title={
               <>
                 AI cuts invoicing costs by{" "}
                 <span className="text-pink-400 font-bold text-3xl"><AuroraText>80%</AuroraText></span>, and gets the job done in minutes not days.
+                <BackgroundBeams />
               </>
             }
             description="With AI, no more late invoices or manual data entry."
             source="APQC"
           />
+        </div>
       </div>
     </div>
   );
@@ -145,7 +156,7 @@ const GridItem = ({ height, category, title, description, source }: GridItemProp
   };
 
   return (
-    <div className={`${getHeightClass()} list-none`}>
+    <div className={`${getHeightClass()} list-none h-full`}>
       <div className="relative h-full rounded-2xl border border-gray-700 p-2 md:rounded-3xl md:p-3 bg-[#121212]">
         <GlowingEffect
           spread={40}
@@ -157,11 +168,11 @@ const GridItem = ({ height, category, title, description, source }: GridItemProp
         <div className="border-0.75 relative flex h-full flex-col justify-between gap-6 overflow-hidden rounded-xl p-6 md:p-6">
           <div className="relative flex flex-1 flex-col gap-4">
             <div className="flex items-center gap-3">
-            
               <span className="text-sm font-medium text-blue-400 bg-blue-900/20 px-3 py-1 rounded-lg border border-blue-600">
                 {category}
               </span>
             </div>
+
             <div className="space-y-4 flex-1">
               <h3 className="text-lg leading-relaxed text-white">
                 {title}
@@ -172,7 +183,7 @@ const GridItem = ({ height, category, title, description, source }: GridItemProp
                 </p>
               )}
             </div>
-            <div className="text-xs text-gray-500 border border-gray-700 bg-gray-800/50 px-3 py-1 rounded w-fit">
+            <div className="text-xs text-gray-500 px-3 py-1">
               {source}
             </div>
           </div>
