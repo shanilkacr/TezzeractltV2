@@ -5,9 +5,9 @@ import { Hero } from "@/components/Hero";
 import { LogoTicker } from "@/components/LogoTicker";
 import { Features } from "@/components/Features";
 import { ProductShowcase } from "@/components/ProductShowcase";
-import { Timeline } from "@/components/Timeline";
 import { CallToAction } from "@/components/CallToAction";
 import { CallToActioncopy } from "@/components/CallToActioncopy";
+import { GlowingEffectDemo } from "@/components/GlowingDemo";
 
 
 import { Footer } from "@/components/Footer";
@@ -70,59 +70,7 @@ export default function Home() {
 
       <LogoTicker />
       <Features />
-<Timeline
-  data={[
-    {
-      title: "Started the Journey",
-      content: (
-        <div className="flex items-start gap-3 text-neutral-600 dark:text-neutral-300 text-base max-w-2xl">
-          <IconRocket className="text-purple-500 mt-1" />
-          <p>
-            Began learning <strong>HTML</strong>, <strong>CSS</strong>, and
-            <strong> JavaScript</strong>. Built small projects to grasp the basics of web development.
-          </p>
-        </div>
-      ),
-    },
-    {
-      title: "Dived into React",
-      content: (
-        <div className="flex items-start gap-3 text-neutral-600 dark:text-neutral-300 text-base max-w-2xl">
-          <IconBrandReact className="text-sky-500 mt-1" />
-          <p>
-            Explored <strong>React.js</strong> to create dynamic UIs.
-            Learned about hooks, props, and component-based architecture.
-          </p>
-        </div>
-      ),
-    },
-    {
-      title: "Joined Open Source",
-      content: (
-        <div className="flex items-start gap-3 text-neutral-600 dark:text-neutral-300 text-base max-w-2xl">
-          <IconGitBranch className="text-green-500 mt-1" />
-          <p>
-            Contributed to open source projects on <strong>GitHub</strong>.
-            Collaborated with maintainers and reviewed PRs.
-          </p>
-        </div>
-      ),
-    },
-    {
-      title: "Deployed My First App",
-      content: (
-        <div className="flex items-start gap-3 text-neutral-600 dark:text-neutral-300 text-base max-w-2xl">
-          <IconWorld className="text-blue-500 mt-1" />
-          <p>
-            Built and deployed a web app using <strong>Next.js</strong> and
-            <strong> Vercel</strong>. Implemented mobile-first design using
-            <strong> Tailwind CSS</strong>.
-          </p>
-        </div>
-      ),
-    },
-  ]}
-/>      
+ <GlowingEffectDemo />;
   <CallToAction />
       <Footer />
       </div>
