@@ -16,7 +16,7 @@ interface MeteorsProps {
 export const Meteors = ({
   number = 20,
   minDelay = 0.2,
-  maxDelay = 2,
+  maxDelay = 0.5,
   minDuration = 5,
   maxDuration = 20,
   angle = -215,
@@ -29,7 +29,7 @@ export const Meteors = ({
   useEffect(() => {
     const styles = [...new Array(number)].map(() => ({
       "--angle": -angle + "deg",
-      top: "-35%",
+      top: "-39%",
       left: `${Math.floor(Math.random() * 100)}%`, // Use percentage instead of pixels
       animationDelay: Math.random() * (maxDelay - minDelay) + minDelay + "s",
       animationDuration:

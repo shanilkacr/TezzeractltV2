@@ -36,25 +36,25 @@ const features = [
 
 export const Features = () => {
   return (
-    <div className=" text-white  py-[72px] sm:py-24">
-      <div className="container mx-auto px-[292px]">
-        <h2 className="text-center font-bold text-5xl sm:text-6xl tracking-tighter">
+    <div className="text-white py-12 sm:py-16 md:py-20 lg:py-24">
+      <div className="container mx-auto px-4 sm:px-6 md:px-8 lg:px-12 xl:px-16 2xl:px-[292px]">
+        <h2 className="text-center font-bold text-3xl sm:text-4xl md:text-5xl lg:text-6xl tracking-tighter leading-tight">
           Smart <AuroraText>AI</AuroraText> Solutions,
-          <br /> Built for the Way You Work{" "}
+          <br className="hidden sm:block" /> 
+          <span className="block sm:inline">Built for the Way You Work</span>
         </h2>
         <div className="max-w-xl mx-auto">
-          <p className="text-center mt-5 text-xl text-white/70">
+          <p className="text-center mt-4 sm:mt-5 text-lg sm:text-xl text-white/70 px-4 sm:px-0">
             Whether you're drowning in tasks or just starting to scale, our
             AI-driven solutions are designed to simplify, automate, and
             accelerate every part of your business.
           </p>
         </div>
-        <div className="mt-16 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-4">
+        <div className="mt-8 sm:mt-12 lg:mt-16 grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-3">
           {features.map(({ title, description, icon }) => (
             <Feature title={title} description={description} icon={icon} key={title} />
           ))}
         </div>
-        
       </div>
     </div>
   );

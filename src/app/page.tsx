@@ -7,7 +7,7 @@ import { Features } from "@/components/Features";
 import { ProductShowcase } from "@/components/ProductShowcase";
 import { CallToAction } from "@/components/CallToAction";
 import { CallToActioncopy } from "@/components/CallToActioncopy";
-import { GlowingEffectDemo } from "@/components/GlowingDemo";
+import { GlowingEffectDemo } from "@/components/Business";
 import { Footer } from "@/components/Footer";
 import { IconBrandReact, IconGitBranch, IconRocket, IconWorld } from "@tabler/icons-react";
 import { useState } from "react";
