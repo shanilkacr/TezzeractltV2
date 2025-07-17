@@ -1,0 +1,263 @@
+import { useState } from 'react';
+import { IconMail, IconPhone, IconMapPin, IconSend } from '@tabler/icons-react';
+import { useMotionTemplate, useMotionValue, motion } from 'motion/react';
+
+// Animated Input Component
+const AnimatedInput = ({ className = '', type = 'text', ...props }) => {
+  const radius = 100;
+  const [visible, setVisible] = useState(false);
+  let mouseX = useMotionValue(0);
+  let mouseY = useMotionValue(0);
+
+  function handleMouseMove({ currentTarget, clientX, clientY }) {
+    let { left, top } = currentTarget.getBoundingClientRect();
+    mouseX.set(clientX - left);
+    mouseY.set(clientY - top);
+  }
+
+  return (
+    <motion.div
+      style={{
+        background: useMotionTemplate`
+          radial-gradient(
+            ${visible ? radius + "px" : "0px"} circle at ${mouseX}px ${mouseY}px,
+            #3b82f6,
+            transparent 80%
+          )
+        `,
+      }}
+      onMouseMove={handleMouseMove}
+      onMouseEnter={() => setVisible(true)}
+      onMouseLeave={() => setVisible(false)}
+      className="group/input rounded-xl p-[2px] transition duration-300"
+    >
+      <input
+        type={type}
+        className={`shadow-input dark:placeholder-text-neutral-600 flex h-10 w-full rounded-xl border-none bg-gray-50 px-3 py-2 text-sm text-black transition duration-400 group-hover/input:shadow-none file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-neutral-400 focus-visible:ring-[2px] focus-visible:ring-neutral-400 focus-visible:outline-none disabled:cursor-not-allowed disabled:opacity-50 dark:bg-zinc-800 dark:text-white dark:shadow-[0px_0px_1px_1px_#404040] dark:focus-visible:ring-neutral-600 ${className}`}
+        {...props}
+      />
+    </motion.div>
+  );
+};
+
+// Animated Textarea Component
+const AnimatedTextarea = ({ className = '', ...props }) => {
+  const radius = 100;
+  const [visible, setVisible] = useState(false);
+  let mouseX = useMotionValue(0);
+  let mouseY = useMotionValue(0);
+
+  function handleMouseMove({ currentTarget, clientX, clientY }) {
+    let { left, top } = currentTarget.getBoundingClientRect();
+    mouseX.set(clientX - left);
+    mouseY.set(clientY - top);
+  }
+
+  return (
+    <motion.div
+      style={{
+        background: useMotionTemplate`
+          radial-gradient(
+            ${visible ? radius + "px" : "0px"} circle at ${mouseX}px ${mouseY}px,
+            #3b82f6,
+            transparent 80%
+          )
+        `,
+      }}
+      onMouseMove={handleMouseMove}
+      onMouseEnter={() => setVisible(true)}
+      onMouseLeave={() => setVisible(false)}
+      className="group/input rounded-xl p-[2px] transition duration-300"
+    >
+      <textarea
+        className={`shadow-input dark:placeholder-text-neutral-600 flex min-h-[80px] w-full rounded-xl border-none bg-gray-50 px-3 py-2 text-sm text-black transition duration-400 group-hover/input:shadow-none file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-neutral-400 focus-visible:ring-[2px] focus-visible:ring-neutral-400 focus-visible:outline-none disabled:cursor-not-allowed disabled:opacity-50 dark:bg-zinc-800 dark:text-white dark:shadow-[0px_0px_1px_1px_#404040] dark:focus-visible:ring-neutral-600 resize-none ${className}`}
+        {...props}
+      />
+    </motion.div>
+  );
+};
+
+export function AboutSection() {
+  const [formData, setFormData] = useState({
+    name: '',
+    email: '',
+    subject: '',
+    message: ''
+  });
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    console.log('Form submitted:', formData);
+  };
+
+  const handleChange = (e) => {
+    setFormData(prev => ({
+      ...prev,
+      [e.target.name]: e.target.value
+    }));
+  };
+
+  return (
+    <section id="about" className="bg-[#121212]">
+      <div className="bg-[#121212] text-white bg-[linear-gradient(to_bottom,#121212,#00398C_34%,#0060EB_65%,#01A6EB_82%)] py-[72px] sm:py-[250px] relative overflow-clip lg:h-[60vh]">
+        <div className="container relative mx-auto">
+          <div className="flex justify-center -mt-6">
+            <div className="inline-flex relative">
+              <h1 className="text-6xl sm:text-[104px] font-medium tracking-tighter text-center leading-tight">
+                <span className="">We Are Tezzeract</span>
+              </h1>
+              <div className="absolute h-[500px] w-[1200px] sm:w-[3400px] sm:h-[1200px] lg:w-[3000px] lg:h-[1400px] sm:py-24 rounded-[100%] bg-[#121212] left-1/2 -translate-x-1/2 border-2 border-[#84DBFF] bg-[radial-gradient(closest-side,#121212_84%,#003D8F)] sm:top-[calc(100%-38px)] top-[calc(100%-100px)]"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <div className="container mx-auto pb-[100px]">
+        <div className="max-w-6xl mx-auto">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
+              Get In Touch
+            </h2>
+            <p className="text-xl text-neutral-300 max-w-2xl mx-auto">
+              Have a question or want to work together? We'd love to hear from you.
+            </p>
+          </div>
+
+          <div className="px-12">
+            <div className="space-y-8">
+              {/* <div>
+                <h3 className="text-2xl font-semibold text-white mb-6">
+                  Contact Information
+                </h3>
+                <div className="space-y-4">
+                  <div className="flex items-center space-x-4">
+                    <div className="flex-shrink-0 w-12 h-12 bg-blue-600 rounded-lg flex items-center justify-center">
+                      <IconMail className="w-6 h-6 text-white" />
+                    </div>
+                    <div>
+                      <p className="text-neutral-300">Email</p>
+                      <p className="text-white font-medium">hello@yourcompany.com</p>
+                    </div>
+                  </div>
+                  
+                  <div className="flex items-center space-x-4">
+                    <div className="flex-shrink-0 w-12 h-12 bg-blue-600 rounded-lg flex items-center justify-center">
+                      <IconPhone className="w-6 h-6 text-white" />
+                    </div>
+                    <div>
+                      <p className="text-neutral-300">Phone</p>
+                      <p className="text-white font-medium">+1 (555) 123-4567</p>
+                    </div>
+                  </div>
+                  
+                  <div className="flex items-center space-x-4">
+                    <div className="flex-shrink-0 w-12 h-12 bg-blue-600 rounded-lg flex items-center justify-center">
+                      <IconMapPin className="w-6 h-6 text-white" />
+                    </div>
+                    <div>
+                      <p className="text-neutral-300">Address</p>
+                      <p className="text-white font-medium">123 Business St, City, State 12345</p>
+                    </div>
+                  </div>
+                </div>
+              </div> */}
+
+              {/* <div className="bg-neutral-800 rounded-xl p-6 border border-neutral-700">
+                <h4 className="text-lg font-semibold text-white mb-3">
+                  Business Hours
+                </h4>
+                <div className="space-y-2 text-neutral-300">
+                  <p>Monday - Friday: 9:00 AM - 6:00 PM</p>
+                  <p>Saturday: 10:00 AM - 4:00 PM</p>
+                  <p>Sunday: Closed</p>
+                </div>
+              </div> */}
+            </div>
+
+            <div className=" p-8 ">
+              <h3 className="text-2xl font-semibold text-white mb-6">
+                Send us a Message
+              </h3>
+              
+              <div className="space-y-6">
+                <div className="grid md:grid-cols-2 gap-4">
+                  <div>
+                    <label htmlFor="name" className="block text-sm font-medium text-neutral-300 mb-2">
+                      Name
+                    </label>
+                    <AnimatedInput
+                      type="text"
+                      id="name"
+                      name="name"
+                      value={formData.name}
+                      onChange={handleChange}
+                      required
+                      placeholder="Your Name"
+                      className="h-12"
+                    />
+                  </div>
+                  
+                  <div>
+                    <label htmlFor="email" className="block text-sm font-medium text-neutral-300 mb-2">
+                      Email
+                    </label>
+                    <AnimatedInput
+                      type="email"
+                      id="email"
+                      name="email"
+                      value={formData.email}
+                      onChange={handleChange}
+                      required
+                      placeholder="your.email@example.com"
+                      className="h-12"
+                    />
+                  </div>
+                </div>
+                
+                <div>
+                  <label htmlFor="subject" className="block text-sm font-medium text-neutral-300 mb-2">
+                    Subject
+                  </label>
+                  <AnimatedInput
+                    type="text"
+                    id="subject"
+                    name="subject"
+                    value={formData.subject}
+                    onChange={handleChange}
+                    required
+                    placeholder="What's this about?"
+                    className="h-12"
+                  />
+                </div>
+                
+                <div>
+                  <label htmlFor="message" className="block text-sm font-medium text-neutral-300 mb-2">
+                    Message
+                  </label>
+                  <AnimatedTextarea
+                    id="message"
+                    name="message"
+                    value={formData.message}
+                    onChange={handleChange}
+                    required
+                    rows={5}
+                    placeholder="Tell us more about your project or question..."
+                  />
+                </div>
+                
+                <button
+                  type="button"
+                  onClick={handleSubmit}
+                  className="w-full bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 px-6 rounded-lg transition-colors duration-200 flex items-center justify-center space-x-2"
+                >
+                  <IconSend className="w-5 h-5" />
+                  <span>Send Message</span>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}

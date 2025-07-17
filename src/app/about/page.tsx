@@ -1,7 +1,7 @@
 "use client";
 import { MobileNav, MobileNavHeader, MobileNavMenu, MobileNavToggle, Navbar, NavbarButton, NavbarLogo, NavBody, NavItems } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
-import { ContactSection } from "@/components/ContactSection";
+import { AboutSection } from "@/components/AboutSection";
 import { useState } from "react";
 
 const navItems = [
@@ -11,7 +11,7 @@ const navItems = [
   { name: "Contact", link: "/contact" }
 ];
 
-export default function ContactPage() {
+export default function AboutPage() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   return (
@@ -57,7 +57,7 @@ export default function ContactPage() {
       
     
       
-      <ContactSection />
+      <AboutSection />
       <Footer />
     </div>
   );

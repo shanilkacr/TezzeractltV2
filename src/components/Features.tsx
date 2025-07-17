@@ -9,25 +9,25 @@ import ContentIcon from "../assets/icons/create.png"; // Replace with your actua
 
 const features = [
   {
-    title: "Automate the Busywork. Focus on What Matters",
+    title: "Automate the busywork. Focus on what matters",
     description:
       "We connect your apps, tools, and systems — then automate tasks like data entry, file transfers, and reporting, so your team can focus on bigger things.",
     icon: AutomationIcon,
   },
   {
-    title: "Add a Digital Team Member, Without Hiring One",
+    title: "Add a digital team member, without hiring one",
     description:
       "We build intelligent agents that can answer emails, manage calendars, chase leads, and more — without you lifting a finger.",
     icon: TeamIcon,
   },
   {
-    title: "Upgrade Your Business Without Rebuilding It",
+    title: "Upgrade your business without rebuilding it",
     description:
       "We use AI to improve how your current systems work — cutting down time, cost, and chaos across operations, HR, finance, and more.",
     icon: UpgradeIcon,
   },
   {
-    title: "Create Stunning Content — No Creative Team Required",
+    title: "Create Stunning Content - No creative team required",
     description:
       "We help you create AI-generated videos, visuals, product mockups, even virtual avatars — tailored for your brand and ready to use.",
     icon: ContentIcon,
@@ -37,8 +37,9 @@ const features = [
 export const Features = () => {
   return (
     <div className="text-white py-12 sm:py-16 md:py-20 lg:py-24">
+      
       <div className="container mx-auto px-4 sm:px-6 md:px-8 lg:px-12 xl:px-16 2xl:px-[292px]">
-        <h2 className="text-center font-bold text-3xl sm:text-4xl md:text-5xl lg:text-6xl tracking-tighter leading-tight">
+        <h2 className="text-center font-medium text-3xl sm:text-4xl md:text-5xl lg:text-6xl tracking-tighter leading-tight">
           Smart <AuroraText>AI</AuroraText> Solutions,
           <br className="hidden sm:block" /> 
           <span className="block sm:inline">Built for the Way You Work</span>
@@ -55,6 +56,7 @@ export const Features = () => {
             <Feature title={title} description={description} icon={icon} key={title} />
           ))}
         </div>
+         
       </div>
     </div>
   );
