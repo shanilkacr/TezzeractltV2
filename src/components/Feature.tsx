@@ -28,9 +28,9 @@ export const Feature = ({
     };
   }, []);
   return (
-    <div className="border-0 border-white/15 px-5 py-10 text-center rounded-xl sm:flex-1 relative">
+    <div className="border border-l-0 border-white/5 px-20 py-10 text-center sm:flex-1 relative">
       <motion.div
-        className="absolute inset-0 border-2 border-[#00AAF0] rounded-xl"
+        className="absolute  inset-0 border-l-0 border-[0.5px] border-[#00AAF0] "
         style={{
           WebkitMaskImage: maskImage,
           maskImage,

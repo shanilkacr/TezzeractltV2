@@ -1,7 +1,6 @@
-import React from "react";
+import React, { use } from "react";
 import { Phone, Mail, MapPin } from "lucide-react";
-import TezzeractTypeface from "../assets/images/Tezzeract - Text Logo (Gradient).webp";
-import whiteLogo from "../assets/images/Tezzeract - Symbolic Logo (Light).webp";
+import TezzeractTypeface from "../assets/images/TezzeractText.png";
 
 
 export const Footer = () => {
@@ -13,11 +12,7 @@ export const Footer = () => {
           {/* Company Info */}
           <div className="space-y-4 w-full lg:w-1/2">
             <div className="flex items-center space-x-6 w-full sm:w-3/4 lg:w-2/3">
-              <img
-                src={whiteLogo}
-                alt="Tezzeract Logo"
-                className="w-8 sm:w-10 h-8 sm:h-10 object-contain"
-              />
+            
 
               <div>
                 <p className="text-xs sm:text-sm text-gray-300 font-thin">
@@ -132,7 +127,7 @@ export const Footer = () => {
         {/* TezzeractTypeface Logo */}
         <div className="flex justify-center mt-10 sm:mt-6">
           <img
-            src={TezzeractTypeface}
+            src={TezzeractTypeface.src}
             alt="Tezzeract Logo"
             className="w-[100%] "
           />

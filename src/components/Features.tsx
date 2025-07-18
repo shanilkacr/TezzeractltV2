@@ -36,9 +36,9 @@ const features = [
 
 export const Features = () => {
   return (
-    <div className="text-white py-12 sm:py-16 md:py-20 lg:py-24">
-      
-      <div className="container mx-auto px-4 sm:px-6 md:px-8 lg:px-12 xl:px-16 2xl:px-[292px]">
+    <div className="text-white w-full py-[100px]">
+      {/* px-4 sm:px-6 md:px-8 lg:px-12 xl:px-16 2xl:px-[292px] */}
+      <div className=" mx-auto ">
         <h2 className="text-center font-medium text-3xl sm:text-4xl md:text-5xl lg:text-6xl tracking-tighter leading-tight">
           Smart <AuroraText>AI</AuroraText> Solutions,
           <br className="hidden sm:block" /> 
@@ -51,7 +51,7 @@ export const Features = () => {
             accelerate every part of your business.
           </p>
         </div>
-        <div className="mt-8 sm:mt-12 lg:mt-16 grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-3">
+        <div className="mt-8 sm:mt-12 lg:mt-16 grid grid-cols-1 md:grid-cols-4 -gap-2 ">
           {features.map(({ title, description, icon }) => (
             <Feature title={title} description={description} icon={icon} key={title} />
           ))}

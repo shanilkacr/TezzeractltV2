@@ -8,6 +8,8 @@ import messageImage from "../assets/images/message.png";
 import { motion } from "framer-motion";
 import { AuroraText } from "./Auratext";
 import { Meteors } from "./Meteors";
+import { TextReveal } from "./text-reveal";
+
 
 export const Hero = () => {
   const aiImageRef = useRef(null);
@@ -32,7 +34,7 @@ export const Hero = () => {
   }, []);
 
   return (
-    <div className="bg-[#121212] text-white bg-[radial-gradient(190%_200%_at_center_80%,#01A6EB_10%,#0060EB_15%,#00398C_25%,#121212_40%)] py-[72px] sm:py-[120px] relative overflow-hidden lg:h-[90vh]">
+    <div className="bg-[#121212] text-white bg-[radial-gradient(190%_200%_at_center_80%,#01A6EB_10%,#0060EB_15%,#00398C_25%,#121212_40%)] py-[120px] sm:py-[120px] relative overflow-hidden lg:h-[95vh]">
       
       {/* Main content circle/div - Higher z-index */}
       <div className="absolute h-[500px] w-[1200px] sm:w-[3400px] sm:h-[1200px] lg:w-[3000px] lg:h-[1400px] sm:py-24 rounded-[100%] bg-[#121212] left-1/2 -translate-x-1/2 border-2 border-[#84DBFF] bg-[radial-gradient(closest-side,#121212_84%,#003D8F)] sm:top-[calc(100%-320px)] top-[calc(100%-100px)] z-20 ">
@@ -44,11 +46,11 @@ export const Hero = () => {
 
       {/* Content container - Highest z-index */}
       <div className="container relative mx-auto z-30">
-        <div className="flex justify-center -mt-6">
+        <div className="flex justify-center mt-9 lg:mt-10">
           <div className="inline-flex relative">
             <h1 className="text-6xl sm:text-[104px] font-medium tracking-tighter text-center leading-tight">
-              <span className="">Your Business</span>
-              <span className="block">
+              <span className="bg-gradient-to-r from-white to-[#9AE1FE] bg-clip-text text-transparent">Your Business,</span>
+              <span className="block bg-gradient-to-r from-white to-[#9AE1FE] bg-clip-text text-transparent">
                 Supercharged by <span className="font-bold"><AuroraText>AI</AuroraText></span>
               </span>
             </h1>
@@ -77,11 +79,12 @@ export const Hero = () => {
           </p>
         </div>
         <div className="flex justify-center mt-8">
-          <button className="bg-white text-black py-3 px-5 rounded-lg font-medium">
+          <button className="bg-gradient-to-r font-semibold from-white to-[#9AE1FE] text-black py-3 px-5 rounded-xl ">
             Book a Call
           </button>
         </div>
       </div>
+      
     </div>
   );
 };
