@@ -6,6 +6,7 @@ import wehanImage from "../assets/images/wehan.png";
 import AboutFeatures from './AboutFeatures';
 
 import shanilkaImage from "../assets/images/shanilka.png";
+import { div } from 'motion/react-client';
 
 
 export function AboutSection() {
@@ -68,27 +69,29 @@ shanilkaImage.src} ,
           </div>
         </div>
       </div>
-       <div className="px-12 mx-auto">
-            <div className="flex flex-row items-center justify-center mb-10 w-full">
-                  <AnimatedTooltip items={people} />
-                </div>
-            
-          </div>
+      
       
       <div className="container mx-auto pb-[100px]">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
-Get access to a pool of vetted professionals specialized in tech, growth, creatives and more!
-</h2>
-            <p className="text-xl text-neutral-300 max-w-2xl mx-auto">
-We'll take care of the talent Effortlessly build and manage a remote team of highly skilled professionals, carefully matched to your project needs. From recruitment to collaboration, we handle the details so you can focus on growing your business      
-            </p>
+We're on a mission to make work feel effortless.</h2>
+            <p className="text-xl text-neutral-500  mx-auto">
+Tezzeract is built for the purpose to help businesses work smarter, not harder by putting the power of AI into the hands of teams that need it most.            </p>
+<p className='text-xl text-neutral-500 mx-auto'>Whether you're a startup founder, an HR lead, or running a scaling business, chances are you're struggling too much. We help businesses cut through the chaos with no-code automations, smart AI tools, and creative solutions built for maximum efficiency.</p>
           </div>
-
+<div className="flex flex-row items-center justify-center mb-10 w-full">
+                  <AnimatedTooltip items={people} />
+                </div>
+            
          
         </div>
       </div>
+       <div className="px-12 mx-auto text-center">
+        <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
+Our Approach</h2>
+            
+          </div>
       <AboutFeatures></AboutFeatures>
     </section>
   );
