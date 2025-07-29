@@ -129,7 +129,7 @@ export const Footer = () => {
           <img
             src={TezzeractTypeface.src}
             alt="Tezzeract Logo"
-            className="w-[100%] "
+            className="w-[100%] " 
           />
         </div>
       </div>

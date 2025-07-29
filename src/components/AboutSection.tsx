@@ -7,6 +7,7 @@ import AboutFeatures from './AboutFeatures';
 
 import shanilkaImage from "../assets/images/shanilka.png";
 import { div } from 'motion/react-client';
+import { CanvasRevealEffectDemo } from './CanvasRevealEffectDemo';
 
 
 export function AboutSection() {
@@ -93,6 +94,7 @@ Our Approach</h2>
             
           </div>
       <AboutFeatures></AboutFeatures>
+                <CanvasRevealEffectDemo/>
     </section>
   );
 }

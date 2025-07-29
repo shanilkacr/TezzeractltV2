@@ -3,6 +3,8 @@ import { MobileNav, MobileNavHeader, MobileNavMenu, MobileNavToggle, Navbar, Nav
 import { Footer } from "@/components/Footer";
 import { AboutSection } from "@/components/AboutSection";
 import { useState } from "react";
+import { CallToAction } from "@/components/CallToAction";
+import { ClientTicker } from "@/components/ClientTicker";
 
 const navItems = [
   { name: "Home", link: "/" },
@@ -58,6 +60,9 @@ export default function AboutPage() {
     
       
       <AboutSection />
+      <ClientTicker />
+
+      <CallToAction />
       <Footer />
     </div>
   );
