@@ -8,6 +8,7 @@ import shanilkaImage from "../assets/images/shanilka.png";
 import { div } from 'motion/react-client';
 import { CanvasRevealEffectDemo3 } from './CanvasRevealEffectDemo3';
 import { FAQ } from './FAQ';
+import AutomationTabs from './AutomationTabs';
 
 export function AboutSection() {
   const people = [
@@ -88,6 +89,7 @@ export function AboutSection() {
           Our Approach
         </h2>
       </div>
+      <AutomationTabs />
       <CanvasRevealEffectDemo3/>
             <FAQ />
 
