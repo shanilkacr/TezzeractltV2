@@ -9,6 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@react-three/fiber": "^8.18.0",
     "@tabler/icons-react": "^3.34.0",
     "@types/react-router-dom": "^5.3.3",
     "clsx": "^2.1.1",
