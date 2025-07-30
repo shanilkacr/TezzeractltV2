@@ -5,37 +5,42 @@ export const FAQ = () => {
   const [openIndex, setOpenIndex] = useState(null);
 
   const faqData = [
+     
     {
-      question: "I'm not tech-savvy. Can I still use your services?",
+      question: "What exactly does Tezzeract do?",
+      answer: "We help businesses automate their workflows using AI — everything from automating emails, document handling, and repetitive tasks to creating AI-powered assistants and custom tools. Simply put, we save your team time so you can focus on growth."
+    },
+    {
+      question: " I’m not tech-savvy. Can I still use your services?",
       answer: "Absolutely. Our solutions are built to be simple, intuitive, and designed for non-technical teams like HR, operations, marketing, and finance. We guide you through every step. No jargon, no overwhelm."
     },
     {
       question: "Do I need to already use AI tools or software?",
-      answer: "Not at all! We work with businesses at every stage of their digital journey. Whether you're just starting to explore AI or looking to optimize existing tools, we'll meet you where you are and help you move forward at your own pace."
+      answer: "Not at all. Whether you’re just starting out or already using tools like ChatGPT, Zapier, or Notion, we’ll meet you where you are and build a solution that works with what you already have."
     },
-    {
+      {
       question: "How long does it take to implement a solution?",
-      answer: "Implementation timelines vary based on your specific needs and complexity. Simple solutions can be deployed within 1-2 weeks, while more comprehensive systems typically take 4-8 weeks. We'll provide a clear timeline during our initial consultation."
+      answer: "It depends on the complexity. Some automations can go live in just a few days. Larger systems might take a few weeks. Either way, we move fast and keep you updated at every step."
     },
     {
       question: "What industries do you work with?",
-      answer: "We work across various industries including healthcare, finance, retail, manufacturing, education, and professional services. Our solutions are adaptable and can be customized to meet the unique requirements of your specific industry."
+      answer: "We’re industry-agnostic. Our services work for retail, finance, healthcare, education, agencies, startups, and more. If you have repetitive tasks or inefficiencies, we can help."
     },
     {
       question: "Is this secure? Will my data be safe?",
-      answer: "Security is our top priority. We implement enterprise-grade security measures including data encryption, secure access controls, and compliance with industry standards like GDPR and SOC 2. Your data remains yours and is never shared with third parties."
+      answer: "Yes. Security and data privacy are top priorities. We follow best practices for encryption, access control, and only work with trusted, enterprise-grade AI tools."
     },
     {
       question: "What's the pricing like?",
-      answer: "Our pricing is transparent and scalable based on your needs. We offer flexible packages starting from basic implementations to comprehensive enterprise solutions. Contact us for a personalized quote that fits your budget and requirements."
+      answer: "We tailor our pricing based on your business size, needs, and complexity. Book a free strategy call and we’ll give you a transparent quote with no hidden fees."
     },
     {
       question: "Can you build something custom for my business?",
-      answer: "Yes! We specialize in creating custom solutions tailored to your unique business processes and goals. Our team will work closely with you to understand your requirements and develop a solution that fits perfectly with your workflow."
+      answer: "Yes, that’s one of our specialties. If you have a unique challenge or idea, we can build a fully custom AI solution or automation tailored specifically for you."
     },
     {
       question: "What's the first step if I want to get started?",
-      answer: "Simply reach out for a free consultation! We'll discuss your current challenges, goals, and explore how our solutions can help. No commitment required – just an honest conversation about how we can support your business growth."
+      answer: "Easy, just book a free strategy call. We’ll understand your needs, suggest the right approach, and show you how automation can fit into your workflow. No pressure, just value."
     }
   ];
 
@@ -53,7 +58,7 @@ FAQ          </h2>
         </div>
         <div className="space-y-4">
           {faqData.map((faq, index) => (
-            <div key={index} className="border-b border-gray-800">
+            <div key={index} className="">
               <button
                 onClick={() => toggleFAQ(index)}
                 className="w-full text-left py-6 px-4 flex justify-between items-center hover:bg-black-800/50 transition-colors duration-200 rounded-lg"
