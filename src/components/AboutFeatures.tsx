@@ -1,7 +1,7 @@
 import AboutFeatureCard from "./AboutFeatureCard";
 import TezImage from "../assets/images/tezzeractofficial_logo.jpeg";
 
-export default function AbouutFeatures() {
+export default function AboutFeatures() {
     return(
     <section className="container mx-auto">
         <div className="mt-12 px-5 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
