@@ -1,8 +1,10 @@
 "use client";
 import { MobileNav, MobileNavHeader, MobileNavMenu, MobileNavToggle, Navbar, NavbarButton, NavbarLogo, NavBody, NavItems } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
-import { ContactSection } from "@/components/ContactSection";
 import { useState } from "react";
+import { CallToAction } from "@/components/CallToAction";
+import { ClientTicker } from "@/components/ClientTicker";
+import { SolutionsSection } from "@/components/SolutionsSection";
 
 const navItems = [
   { name: "Home", link: "/" },
@@ -11,7 +13,7 @@ const navItems = [
   { name: "Contact", link: "/contact" }
 ];
 
-export default function ContactPage() {
+export default function SolutionsPage() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   return (
@@ -55,9 +57,12 @@ export default function ContactPage() {
         </MobileNav>
       </Navbar>
       
-    
+          <SolutionsSection />
+
       
-      <ContactSection />
+      <ClientTicker />
+
+      <CallToAction />
       <Footer />
     </div>
   );

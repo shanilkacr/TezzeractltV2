@@ -14,7 +14,7 @@ import { useState } from "react";
 
 const navItems = [
   { name: "Home", link: "/" },
-  { name: "Features", link: "#features" },
+  { name: "Solutions", link: "/solutions" },
   { name: "About Us", link: "/about" },
   { name: "Contact", link: "/contact" }
 ];
