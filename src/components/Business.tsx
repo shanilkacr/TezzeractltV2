@@ -43,9 +43,8 @@ export function GlowingEffectDemo() {
               title={
                 <>
                   AI-generated visuals and copy see{" "}
-                  <span className="text-pink-400 font-bold text-3xl"><AuroraText>2.1%</AuroraText></span> more engagement and lower ad spend by{" "}
-                  <span className="text-pink-400 font-bold text-3xl"><AuroraText>40%</AuroraText></span>
-                  <WarpBackground className="absolute inset-0 z-0" />
+                  <span className=" font-bold text-3xl"><AuroraText>2.1%</AuroraText></span> more engagement and lower ad spend by{" "}
+                  <span className=" font-bold text-3xl"><AuroraText>40%</AuroraText></span>
                 </>
               }
               description="AI produces ads that perform better, built in half the time."
@@ -60,7 +59,7 @@ export function GlowingEffectDemo() {
               title={
                 <>
                   AI helps nurture prospects automatically, increasing sales opportunities by{" "}
-                  <span className="text-pink-400 font-bold text-3xl"><AuroraText>20%</AuroraText></span>
+                  <span className="font-bold text-3xl"><AuroraText>20%</AuroraText></span>
                 </>
               }
               description="Follow up with every lead without a burnout."

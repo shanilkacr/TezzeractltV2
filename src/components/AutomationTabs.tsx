@@ -184,7 +184,7 @@ const AutomationTabs = () => {
   };
 
   return (
-    <div className="bg-[#121212] text-white min-h-screen py-8">
+    <div className="bg-[#121212] text-white py-[70px] sm:py-24">
       <div className="max-w-6xl mx-auto px-6">
         {/* Tab Navigation */}
         <div className="flex justify-center mb-12">
@@ -206,7 +206,7 @@ const AutomationTabs = () => {
         </div>
 
         {/* Content Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-0">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 ">
           {automationData[activeTab].map((item, index) => (
             <FeatureCard
               key={index}

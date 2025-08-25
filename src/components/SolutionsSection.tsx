@@ -5,7 +5,7 @@ import { AnimatedTooltip } from "./animated-tooltip";
 import wehanImage from "../assets/images/wehan.png";
 import AboutFeatures from './AboutFeatures';
 import shanilkaImage from "../assets/images/shanilka.png";
-import { div } from 'motion/react-client';
+import { div, h2 } from 'motion/react-client';
 import { CanvasRevealEffectDemo3 } from './CanvasRevealEffectDemo3';
 import { FAQ } from './FAQ';
 import AutomationTabs from './AutomationTabs';
@@ -52,7 +52,7 @@ export function SolutionsSection() {
 
   return (
     <section id="about" className="bg-[#121212]">
-      <div className="bg-[#121212] text-white bg-[linear-gradient(to_bottom,#121212,#00398C_34%,#0060EB_65%,#01A6EB_82%)] py-[72px] sm:py-[250px] relative overflow-clip lg:h-[60vh]">
+      <div className=" text-white bg-[linear-gradient(to_bottom,#121212,#00398C_34%,#0060EB_65%,#01A6EB_82%)] py-[72px] sm:py-[250px] relative overflow-clip lg:h-[60vh]">
         <div className="container relative mx-auto">
           <div className="flex justify-center -mt-6">
             <div className="inline-flex relative">
@@ -65,25 +65,17 @@ export function SolutionsSection() {
         </div>
       </div>
       
-      <div className="container mx-auto pb-[100px]">
+      <div className=" mx-auto pb-[100px]">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
+            <h2 className="text-4xl md:text-5xl font-medium text-white mb-4">
 We can reclaim your time back to you by our AI automations            </h2>
             <p className="text-xl text-neutral-500 mx-auto">
-Every growing business hits a wall. Manual processes stack up. Teams get stretched. Mistakes creep in. You didn’t sign up to babysit spreadsheets. That’s where we come in.            </p>
-           
+Every growing business hits a wall. Manual processes stack up. Teams get stretched. Mistakes creep in. You didn’t sign up to babysit spreadsheets. That’s where we come in.            </p>     
           </div>
-          <div className="flex flex-row items-center justify-center mb-10 w-full">
-          </div>
+    
         </div>
-      </div>
-
-      <div className="px-12 mx-auto text-center">
-        <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
-          Our Approach
-        </h2>
-      </div>
+      </div>      
       <AutomationTabs />
       <FAQ />
     </section>
