@@ -68,7 +68,7 @@ export function AboutSection() {
       <div className="container mx-auto pb-[100px]">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
+            <h2 className="text-4xl md:text-5xl font-medium text-white mb-4">
               We're on a mission to make work feel effortless.
             </h2>
             <p className="text-xl text-neutral-500 mx-auto">
@@ -85,7 +85,7 @@ export function AboutSection() {
       </div>
 
       <div className="px-12 mx-auto text-center">
-        <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
+        <h2 className="text-4xl md:text-5xl font-medium text-white mb-4">
           Our Approach
         </h2>
       </div>

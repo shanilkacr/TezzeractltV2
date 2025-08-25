@@ -75,9 +75,9 @@ function Card({ text }: CardProps) {
 export function CanvasRevealEffectDemo3() {
   return (
     <div className="cardContainer flex flex-col lg:flex-row gap-20 !justify-center py-8">
-      <Card text="Every business is different. So are our solutions." />
-      <Card text="Innovate with confidence. We've got you covered." />
-      <Card text="Transform your ideas into reality with ease." />
+      <Card text="People First" />
+      <Card text="Customize" />
+      <Card text="Customize" />
     </div>
   );
 }
