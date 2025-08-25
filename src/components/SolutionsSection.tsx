@@ -69,17 +69,12 @@ export function SolutionsSection() {
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
-              We're on a mission to make work feel effortless.
-            </h2>
+We can reclaim your time back to you by our AI automations            </h2>
             <p className="text-xl text-neutral-500 mx-auto">
-              Tezzeract is built for the purpose to help businesses work smarter, not harder by putting the power of AI into the hands of teams that need it most.
-            </p>
-            <p className='text-xl text-neutral-500 mx-auto'>
-              Whether you're a startup founder, an HR lead, or running a scaling business, chances are you're struggling too much. We help businesses cut through the chaos with no-code automations, smart AI tools, and creative solutions built for maximum efficiency.
-            </p>
+Every growing business hits a wall. Manual processes stack up. Teams get stretched. Mistakes creep in. You didn’t sign up to babysit spreadsheets. That’s where we come in.            </p>
+           
           </div>
           <div className="flex flex-row items-center justify-center mb-10 w-full">
-            <AnimatedTooltip items={people} />
           </div>
         </div>
       </div>
@@ -90,9 +85,7 @@ export function SolutionsSection() {
         </h2>
       </div>
       <AutomationTabs />
-      <CanvasRevealEffectDemo3/>
-            <FAQ />
-
+      <FAQ />
     </section>
   );
 }

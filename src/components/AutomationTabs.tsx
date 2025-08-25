@@ -1,4 +1,51 @@
-import { useState } from 'react';
+import { useState, useEffect, useRef } from 'react';
+import { motion, useMotionTemplate, useMotionValue } from 'framer-motion';
+
+const FeatureCard = ({ title, description, highlighted }) => {
+  const offsetX = useMotionValue(-100);
+  const offsetY = useMotionValue(-100);
+  const maskImage = useMotionTemplate`radial-gradient(200px 200px at ${offsetX}px ${offsetY}px, black, transparent)`;
+  const border = useRef(null);
+
+  useEffect(() => {
+    const updateMousePosition = (e) => {
+      if (!border.current) return;
+      const borderRect = border.current?.getBoundingClientRect();
+      offsetX.set(e.x - borderRect.x);
+      offsetY.set(e.y - borderRect.y);
+    };
+    window.addEventListener("mousemove", updateMousePosition);
+    return () => {
+      window.removeEventListener("mousemove", updateMousePosition);
+    };
+  }, []);
+
+  return (
+    <div className="border border-white/5 px-8 py-10 text-center relative group">
+      <motion.div
+        className="absolute inset-0 border-[0.5px] border-[#00AAF0] opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+        style={{
+          WebkitMaskImage: maskImage,
+          maskImage,
+        }}
+        ref={border}
+      />
+      <div className="relative z-10">
+        <h3 className="text-xl font-bold mb-4 text-white">
+          {title}
+        </h3>
+        <p className="text-white/70 text-sm leading-relaxed">
+          {description}
+        </p>
+        {highlighted && (
+          <div className="mt-4 inline-block px-3 py-1 bg-[#00AAF0]/20 border border-[#00AAF0]/30 rounded-full text-xs text-[#00AAF0]">
+            Featured
+          </div>
+        )}
+      </div>
+    </div>
+  );
+};
 
 const AutomationTabs = () => {
   const [activeTab, setActiveTab] = useState('Automation');
@@ -15,7 +62,7 @@ const AutomationTabs = () => {
       {
         title: 'Invoice & Document Handling',
         description: 'Automatically extract data from PDFs, emails, or receipts and update records in real time.',
-        highlighted: true
+        highlighted: false
       },
       {
         title: 'Tool Integration (No-Code)',
@@ -47,7 +94,7 @@ const AutomationTabs = () => {
       {
         title: 'Sales Assistant Agent',
         description: 'Automated lead qualification, follow-up emails, and meeting scheduling with prospects.',
-        highlighted: true
+        highlighted: false
       },
       {
         title: 'HR Recruitment Agent',
@@ -79,7 +126,7 @@ const AutomationTabs = () => {
       {
         title: 'Smart Document Processing',
         description: 'Extract and process information from contracts, invoices, and legal documents automatically.',
-        highlighted: true
+        highlighted: false
       },
       {
         title: 'Predictive Analytics',
@@ -111,7 +158,7 @@ const AutomationTabs = () => {
       {
         title: 'Design Automation Tools',
         description: 'Generate marketing materials, social media graphics, and brand assets automatically.',
-        highlighted: true
+        highlighted: false
       },
       {
         title: 'Video & Audio Processing',
@@ -141,12 +188,12 @@ const AutomationTabs = () => {
       <div className="max-w-6xl mx-auto px-6">
         {/* Tab Navigation */}
         <div className="flex justify-center mb-12">
-          <div className="flex bg-[#27272A] rounded-lg p-1 gap-10 backdrop-blur-sm b">
+          <div className="flex bg-[#27272A] rounded-xl p-1 gap-10 backdrop-blur-sm">
             {tabs.map((tab) => (
               <button
                 key={tab}
                 onClick={() => setActiveTab(tab)}
-                className={`px-12 py-1 rounded-md text-sm font-medium transition-all duration-300 whitespace-nowrap ${
+                className={`px-12 py-2 rounded-xl text-sm font-medium transition-all duration-300 whitespace-nowrap ${
                   activeTab === tab
                     ? 'bg-[#121212] text-white shadow-lg'
                     : 'text-gray-400 hover:text-white'
@@ -159,19 +206,14 @@ const AutomationTabs = () => {
         </div>
 
         {/* Content Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-0">
           {automationData[activeTab].map((item, index) => (
-            <div
+            <FeatureCard
               key={index}
-              className={`p-6 rounded-lg border  `}
-            >
-              <h3 className="text-3xl font-semibold mb-3 text-white">
-                {item.title}
-              </h3>
-              <p className="text-zinc-400 text-sm  leading-relaxed">
-                {item.description}
-              </p>
-            </div>
+              title={item.title}
+              description={item.description}
+              highlighted={item.highlighted}
+            />
           ))}
         </div>
       </div>

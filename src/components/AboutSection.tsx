@@ -89,10 +89,7 @@ export function AboutSection() {
           Our Approach
         </h2>
       </div>
-      <AutomationTabs />
       <CanvasRevealEffectDemo3/>
-            <FAQ />
-
     </section>
   );
 }

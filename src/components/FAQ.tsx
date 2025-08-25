@@ -49,7 +49,7 @@ export const FAQ = () => {
   };
 
   return (
-    <section className="bg-[#121212] py-16">
+    <section className="bg-[#121212] ">
       <div className="max-w-4xl mx-auto px-6">
         <div className="text-center mb-12">
           <h2 className="text-4xl md:text-5xl font-medium text-white mb-4">

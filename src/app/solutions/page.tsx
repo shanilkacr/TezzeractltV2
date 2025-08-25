@@ -56,7 +56,7 @@ export default function SolutionsPage() {
           </MobileNavMenu>
         </MobileNav>
       </Navbar>
-      
+    
           <SolutionsSection />
 
       
