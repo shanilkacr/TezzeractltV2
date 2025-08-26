@@ -5,9 +5,10 @@ import { CanvasRevealEffect } from "@/components/canvas-reveal-effect";
 
 interface CardProps {
   text: string;
+  hoverText: string; // New prop for hover text
 }
 
-function Card({ text }: CardProps) {
+function Card({ text, hoverText }: CardProps) {
   const [hovered, setHovered] = React.useState(false);
   const offsetX = useMotionValue(-100);
   const offsetY = useMotionValue(-100);
@@ -46,9 +47,19 @@ function Card({ text }: CardProps) {
         }}
         ref={border}
       ></motion.div>
-      <p className="md:text-xl text-xl font-normal text-center text-white relative z-20 max-w-2xl mx-auto">
-        {text}
-      </p>
+      
+      {/* Animated text that changes on hover */}
+      <motion.p 
+        className="md:text-xl text-xl font-normal text-center text-white relative z-20 max-w-2xl mx-auto"
+        key={hovered ? 'hovered' : 'normal'} // Key change triggers animation
+        initial={{ opacity: 0, y: 10 }}
+        animate={{ opacity: 1, y: 0 }}
+        exit={{ opacity: 0, y: -10 }}
+        transition={{ duration: 0.2 }}
+      >
+        {hovered ? hoverText : text}
+      </motion.p>
+
       <AnimatePresence>
         {hovered && (
           <motion.div
@@ -75,9 +86,9 @@ function Card({ text }: CardProps) {
 export function CanvasRevealEffectDemo3() {
   return (
     <div className="cardContainer flex flex-col lg:flex-row gap-20 !justify-center py-8">
-      <Card text="People First" />
-      <Card text="Customize" />
-      <Card text="Customize" />
+      <Card text="People First" hoverText="Putting people at the center of everything we do" />
+      <Card text="Customize" hoverText="Tailor solutions to your unique needs" />
+      <Card text="Innovation" hoverText="Pushing boundaries with cutting-edge technology" />
     </div>
   );
 }

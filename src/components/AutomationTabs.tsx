@@ -31,7 +31,7 @@ const FeatureCard = ({ title, description, highlighted }) => {
         ref={border}
       />
       <div className="relative rounded-xl z-10 border-red-500">
-        <h3 className="text-xl font-bold mb-4 text-white">
+        <h3 className="text-xl font-medium mb-4 text-white">
           {title}
         </h3>
         <p className="text-white/70 text-sm leading-relaxed">
