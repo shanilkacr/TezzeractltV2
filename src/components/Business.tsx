@@ -1,10 +1,12 @@
-"use client";
-
+import React from 'react';
 import { Users, Zap, Palette, Package, MessageSquare, FileText } from "lucide-react";
 import { GlowingEffect } from "./GlowingEffect";
 import { AuroraText } from "./Auratext";
 import { BackgroundBeams } from "./backgroundbeam";
 import { WarpBackground } from "./WarpBackground";
+import Clock from "../assets/images/clock.png";
+import Operations from "../assets/images/operationsicons.png";
+
 
 export function GlowingEffectDemo() {
   return (
@@ -33,8 +35,14 @@ export function GlowingEffectDemo() {
                   <span className="text-blue-400 font-bold text-3xl"><AuroraText>40%</AuroraText></span> of the time spent on routine tasks.
                 </>
               }
-              description="AI can free your HR team from repetitive admin."
-              source="Deloitte, 2024"
+              description="Deloitte, 2024"
+              source="AI can free your HR team from repetitive admin."
+              image={{
+                src: Clock.src,
+                alt: "HR team collaboration",
+                position: "bottom-right",
+                size: "medium"
+              }}
             />
 
             <GridItem
@@ -49,6 +57,12 @@ export function GlowingEffectDemo() {
               }
               description="AI produces ads that perform better, built in half the time."
               source="Meta, 2023"
+              image={{
+                src: "https://images.unsplash.com/photo-1611224923853-80b023f02d71?w=400&h=250&fit=crop&crop=center",
+                alt: "Creative advertising design",
+                position: "center",
+                size: "large"
+              }}
             />
           </div>
 
@@ -64,6 +78,12 @@ export function GlowingEffectDemo() {
               }
               description="Follow up with every lead without a burnout."
               source="Forrester"
+              image={{
+                src: Operations.src,
+                alt: "Sales operations dashboard",
+                position: "bottom",
+                size: "large2"
+              }}
             />
 
             <GridItem
@@ -95,6 +115,12 @@ export function GlowingEffectDemo() {
               }
               description=""
               source="IBM"
+              image={{
+                src: "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=250&h=150&fit=crop&crop=center",
+                alt: "Customer service chat",
+                position: "top-left",
+                size: "small"
+              }}
             />
           </div>
           
@@ -111,6 +137,12 @@ export function GlowingEffectDemo() {
               }
               description="With AI, no more late invoices or manual data entry."
               source="APQC"
+              image={{
+                src: "https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=300&h=180&fit=crop&crop=center",
+                alt: "Invoice automation",
+                position: "center-right",
+                size: "medium"
+              }}
             />
           </div>
         </div>
@@ -203,15 +235,23 @@ export function GlowingEffectDemo() {
   );
 }
 
+interface ImageConfig {
+  src: string;
+  alt: string;
+  position: 'top-left' | 'top-right' | 'bottom-left' | 'bottom' |'bottom-right' | 'center' | 'center-left' | 'center-right';
+  size: 'small' | 'medium' | 'large';
+}
+
 interface GridItemProps {
   height: 'small' | 'medium' | 'medium2' | 'large' | 'large2' | 'mobile';
   category: string;
   title: React.ReactNode;
   description: string;
   source: string;
+  image?: ImageConfig;
 }
 
-const GridItem = ({ height, category, title, description, source }: GridItemProps) => {
+const GridItem = ({ height, category, title, description, source, image }: GridItemProps) => {
   const getHeightClass = () => {
     switch (height) {
       case 'small':
@@ -223,11 +263,50 @@ const GridItem = ({ height, category, title, description, source }: GridItemProp
       case 'large':
         return 'min-h-[34rem]';
       case 'large2':
-        return 'min-h-[35.5rem]';
+        return 'min-h-[40rem]';
       case 'mobile':
         return 'min-h-[12rem] sm:min-h-[14rem]';
       default:
         return 'min-h-[20rem]';
+    }
+  };
+
+  const getImagePositionClass = (position: string) => {
+    switch (position) {
+      case 'top-left':
+        return 'absolute top-4 left-4';
+      case 'top-right':
+        return 'absolute top-4 right-4';
+      case 'bottom-left':
+        return 'absolute bottom-16 left-4';
+      case 'bottom':
+        return 'absolute bottom-16';
+      case 'bottom-right':
+      case 'bottom-right':
+        return 'absolute bottom-16 right-4';
+      case 'center':
+        return 'absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2';
+      case 'center-left':
+        return 'absolute top-1/2 left-4 transform -translate-y-1/2';
+      case 'center-right':
+        return 'absolute top-1/2 right-4 transform -translate-y-1/2';
+      default:
+        return 'absolute top-4 right-4';
+    }
+  };
+
+  const getImageSizeClass = (size: string) => {
+    switch (size) {
+      case 'small':
+        return 'w-16 h-16 sm:w-20 sm:h-20';
+      case 'medium':
+        return 'w-24 h-24 sm:w-32 sm:h-32';
+      case 'large':
+        return 'w-32 h-32 sm:w-40 sm:h-40 lg:w-48 lg:h-48';
+        case 'large2':
+        return 'w-32 h-32 sm:w-40 sm:h-40 lg:w-64 lg:h-64';
+      default:
+        return 'w-24 h-24 sm:w-32 sm:h-32';
     }
   };
 
@@ -242,7 +321,19 @@ const GridItem = ({ height, category, title, description, source }: GridItemProp
           inactiveZone={0.01}
         />
         <div className="border-0.75 relative flex h-full flex-col justify-between gap-3 sm:gap-4 lg:gap-6 overflow-hidden rounded-lg sm:rounded-xl p-4 sm:p-6">
-          <div className="relative flex flex-1 flex-col gap-3 sm:gap-4">
+          
+          {/* Image */}
+          {image && (
+            <div className={`${getImagePositionClass(image.position)} z-10`}>
+              <img
+                src={image.src}
+                alt={image.alt}
+                className={`${getImageSizeClass(image.size)} rounded-lg object-cover opacity-80 hover:opacity-100 transition-opacity duration-300`}
+              />
+            </div>
+          )}
+
+          <div className="relative flex flex-1 flex-col gap-3 sm:gap-4 z-20">
             <div className="flex items-center gap-3">
               <span className="text-xs sm:text-sm font-medium text-blue-400 bg-blue-900/20 px-2 sm:px-3 py-1 rounded-lg border border-blue-600">
                 {category}
