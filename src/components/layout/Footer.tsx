@@ -1,6 +1,7 @@
 import React, { use } from "react";
 import { Phone, Mail, MapPin } from "lucide-react";
-import TezzeractTypeface from "../assets/images/TezzeractText.png";
+import Image from "next/image";
+import TezzeractTypeface from "../../assets/images/TezzeractText.png";
 
 
 export const Footer = () => {
@@ -125,13 +126,13 @@ export const Footer = () => {
         </div>
 
         {/* TezzeractTypeface Logo */}
-        <div className="flex justify-center mt-10 sm:mt-6">
-          <img
-            src={TezzeractTypeface.src}
+          <Image
+            src={TezzeractTypeface}
             alt="Tezzeract Logo"
-            className="w-[100%] " 
+            className="w-[100%]"
+            style={{ width: "100%", height: "auto" }}
           />
-        </div>
+
       </div>
     </footer>
   );
