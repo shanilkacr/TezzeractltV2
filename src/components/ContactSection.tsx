@@ -247,7 +247,7 @@ export function ContactSection() {
       <div className="container mx-auto pb-[100px]">
         <div className="max-w-6xl mx-auto flex flex-col items-center">
           <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
+            <h2 className="text-4xl md:text-5xl font-medium text-white mb-4">
               Get In Touch
             </h2>
             <p className="text-xl text-neutral-300 max-w-2xl mx-auto">
@@ -270,7 +270,7 @@ export function ContactSection() {
                   </p>
                   <button
                     onClick={() => setIsSubmitted(false)}
-                    className="bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 px-6 rounded-lg transition-colors duration-200"
+                    className="bg-blue-600 hover:bg-blue-700 text-white font-medium py-3 px-6 rounded-lg transition-colors duration-200"
                   >
                     Send Another Message
                   </button>
