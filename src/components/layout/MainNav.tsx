@@ -24,8 +24,7 @@ export function MainNav() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   return (
-    <Navbar>
-      {/* ✅ Desktop Navbar */}
+<Navbar>       {/* ✅ Desktop Navbar */}
       <NavBody>
         <NavbarLogo />
         <NavItems items={navItems} />

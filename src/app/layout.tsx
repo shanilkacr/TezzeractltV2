@@ -18,7 +18,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={clsx(figtree.className, "antialiased")}>
+      <body className={clsx(figtree.className, "antialiased", "bg-[#121212] ")}>
       
        <MainNav />
         <main>{children}</main>
