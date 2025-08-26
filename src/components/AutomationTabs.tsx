@@ -21,16 +21,16 @@ const FeatureCard = ({ title, description, highlighted }) => {
   }, []);
 
   return (
-    <div className="border border-white/5 px-8 py-10 text-center relative group">
+    <div className="border border-white/5 px-8 rounded-xl py-10 text-center relative group">
       <motion.div
-        className="absolute inset-0 border-[0.5px] border-[#00AAF0] opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+        className="absolute inset-0 border-[0.5px] border-[#00AAF0] rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"
         style={{
           WebkitMaskImage: maskImage,
           maskImage,
         }}
         ref={border}
       />
-      <div className="relative z-10">
+      <div className="relative rounded-xl z-10 border-red-500">
         <h3 className="text-xl font-bold mb-4 text-white">
           {title}
         </h3>

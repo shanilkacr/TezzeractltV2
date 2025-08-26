@@ -56,8 +56,8 @@ export default function ContactPage() {
       </Navbar>
       
     
-      
-      <ContactSection />
+            <ContactSection />
+
       <Footer />
     </div>
   );
