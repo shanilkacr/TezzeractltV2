@@ -88,8 +88,8 @@ export function AboutSection() {
         <h2 className="text-4xl md:text-5xl font-medium text-white mb-4">
           Our Approach
         </h2>
+        <CanvasRevealEffectDemo3/>
       </div>
-      <CanvasRevealEffectDemo3/>
     </section>
   );
 }
