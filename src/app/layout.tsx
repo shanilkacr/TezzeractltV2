@@ -18,12 +18,13 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={clsx(figtree.className, "antialiased", "bg-[#121212] ")}>
+      <body className={clsx(figtree.className, "antialiased")}>
       
-       <MainNav />
+      <MainNav />
         <main>{children}</main>
          
         <Footer />
+             
       </body>
     </html>
   );
