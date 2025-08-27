@@ -21,7 +21,7 @@ export const ClientTicker = () => {
   return (
     <div className=" text-white py-[72px] sm:py-24">
       <div className=" mx-auto">
-        <h2 className="text-center text-4xl md:text-5xl font-bold text-white">
+        <h2 className="text-center text-4xl md:text-5xl font-medium text-white">
           Our Clients{" "}
         </h2>
         <div className="flex overflow-hidden mt-9 before:content-[''] before:z-10 after:content-[''] before:absolute after:absolute before:h-full after:h-full before:w-5 after:w-5 relative after:right-0 before:left-0 before:top-0 after:top-0 before:bg-[linear-gradient(to_right,#121212,rgb(0,0,0,0))]  after:bg-[linear-gradient(to_left,#121212,rgb(0,0,0,0))]">
