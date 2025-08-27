@@ -6,6 +6,9 @@ import { BackgroundBeams } from "./backgroundbeam";
 import { WarpBackground } from "./WarpBackground";
 import Clock from "../assets/images/clock.png";
 import Operations from "../assets/images/operationsicons.png";
+import Piggy from "../assets/images/piggy.png";
+import Video from "../assets/images/video.png";
+
 
 
 export function GlowingEffectDemo() {
@@ -58,10 +61,10 @@ export function GlowingEffectDemo() {
               description="AI produces ads that perform better, built in half the time."
               source="Meta, 2023"
               image={{
-                src: "https://images.unsplash.com/photo-1611224923853-80b023f02d71?w=400&h=250&fit=crop&crop=center",
+                src: Piggy.src,
                 alt: "Creative advertising design",
-                position: "center",
-                size: "large"
+                position: "bottom",
+                size: "large2"
               }}
             />
           </div>
@@ -115,12 +118,7 @@ export function GlowingEffectDemo() {
               }
               description=""
               source="IBM"
-              image={{
-                src: "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=250&h=150&fit=crop&crop=center",
-                alt: "Customer service chat",
-                position: "top-left",
-                size: "small"
-              }}
+             
             />
           </div>
           
@@ -132,16 +130,15 @@ export function GlowingEffectDemo() {
                 <>
                   AI cuts invoicing costs by{" "}
                   <span className="text-pink-400 font-bold text-3xl"><AuroraText>80%</AuroraText></span>, and gets the job done in minutes not days.
-                  <BackgroundBeams />
                 </>
               }
               description="With AI, no more late invoices or manual data entry."
               source="APQC"
               image={{
-                src: "https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=300&h=180&fit=crop&crop=center",
+                src: Video.src,
                 alt: "Invoice automation",
-                position: "center-right",
-                size: "medium"
+                position: "bottom-right",
+                size: "large"
               }}
             />
           </div>
@@ -239,7 +236,7 @@ interface ImageConfig {
   src: string;
   alt: string;
   position: 'top-left' | 'top-right' | 'bottom-left' | 'bottom' |'bottom-right' | 'center' | 'center-left' | 'center-right';
-  size: 'small' | 'medium' | 'large';
+  size: 'small' | 'medium' | 'large' | 'large2';
 }
 
 interface GridItemProps {
@@ -280,10 +277,9 @@ const GridItem = ({ height, category, title, description, source, image }: GridI
       case 'bottom-left':
         return 'absolute bottom-16 left-4';
       case 'bottom':
-        return 'absolute bottom-16';
+        return 'absolute bottom-8  left-1/2 transform -translate-x-1/2 ';
       case 'bottom-right':
-      case 'bottom-right':
-        return 'absolute bottom-16 right-4';
+        return 'absolute bottom-6 right-4';
       case 'center':
         return 'absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2';
       case 'center-left':

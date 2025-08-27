@@ -22,25 +22,27 @@ export const ProductShowcase = () => {
             <span>
               <TextReveal className="text-lg font-bold">
               Busywork is stealing your team's time.
-                          Let's fix that
+              Let's fix that
 
               </TextReveal>
               <br />
             </span>
           </div>
-          <p className="text-white/40 text-lg py-5 -mt-[550px]">
+          <div className="px-[52px]">
+          <p className="text-white/70 text-lg py-5 -mt-[550px]">
             Every hour your team spends chasing emails, copying data, or doing
             repetitive tasks is an hour they could’ve spent creating, growing,
             or solving real problems.
           </p>
          
-          <div className="text-white/40 text-lg ">
+          <div className="text-white/70 text-lg ">
             <p className="py-5">That’s where we come in. </p>
 
             <p>
               At Tezzeract, we build intelligent systems that take care of the
               boring stuff. So your people can focus on what they do best.{" "}
             </p>
+          </div>
           </div>
         </div>
       </div>

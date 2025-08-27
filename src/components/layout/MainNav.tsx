@@ -13,6 +13,8 @@ import {
   NavItems 
 } from "@/components/Navbar";
 
+import { ShimmerButton } from "../ShimmerButton";
+
 const navItems = [
   { name: "Home", link: "/" },
   { name: "Solutions", link: "/solutions" },
@@ -29,7 +31,7 @@ export function MainNav() {
       <NavBody>
         <NavbarLogo />
         <NavItems items={navItems} />
-        <NavbarButton variant="primary">Get Started</NavbarButton>
+        <ShimmerButton>Get Started</ShimmerButton>
       </NavBody>
 
       {/* ✅ Mobile Navbar */}
