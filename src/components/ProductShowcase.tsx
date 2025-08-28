@@ -28,8 +28,8 @@ export const ProductShowcase = () => {
               <br />
             </span>
           </div>
-          <div className="px-[52px]">
-          <p className="text-white/70 text-lg py-5 -mt-[550px]">
+          <div className="px-[53px] lg:px-[145px]">
+          <p className="text-white/70 text-lg py-5  -mt-[550px]">
             Every hour your team spends chasing emails, copying data, or doing
             repetitive tasks is an hour they could’ve spent creating, growing,
             or solving real problems.

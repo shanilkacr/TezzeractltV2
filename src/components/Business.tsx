@@ -58,8 +58,8 @@ export function GlowingEffectDemo() {
                   <span className=" font-bold text-3xl"><AuroraText>40%</AuroraText></span>
                 </>
               }
-              description="AI produces ads that perform better, built in half the time."
-              source="Meta, 2023"
+              description="Meta, 2023"
+              source="AI produces ads that perform better, built in half the time."
               image={{
                 src: Piggy.src,
                 alt: "Creative advertising design",
@@ -79,8 +79,8 @@ export function GlowingEffectDemo() {
                   <span className="font-bold text-3xl"><AuroraText>20%</AuroraText></span>
                 </>
               }
-              description="Follow up with every lead without a burnout."
-              source="Forrester"
+              description="Forrester"
+              source="Follow up with every lead without a burnout."
               image={{
                 src: Operations.src,
                 alt: "Sales operations dashboard",
@@ -98,8 +98,8 @@ export function GlowingEffectDemo() {
                   <span className="text-pink-400 font-bold text-3xl"><AuroraText>20%-50%</AuroraText></span>, while improving availability.
                 </>
               }
-              description="Smarter inventory, fewer headaches."
-              source="BCG"
+              description="BCG"
+              source="Smarter inventory, fewer headaches."
             />
           </div>
         </div>
@@ -116,8 +116,8 @@ export function GlowingEffectDemo() {
                   <span className="text-pink-400 font-bold text-3xl"><AuroraText>80%</AuroraText></span>
                 </>
               }
-              description=""
-              source="IBM"
+              description="IBM"
+              source=""
              
             />
           </div>
@@ -132,8 +132,8 @@ export function GlowingEffectDemo() {
                   <span className="text-pink-400 font-bold text-3xl"><AuroraText>80%</AuroraText></span>, and gets the job done in minutes not days.
                 </>
               }
-              description="With AI, no more late invoices or manual data entry."
-              source="APQC"
+              description="APQC"
+              source="With AI, no more late invoices or manual data entry."
               image={{
                 src: Video.src,
                 alt: "Invoice automation",
@@ -346,7 +346,7 @@ const GridItem = ({ height, category, title, description, source, image }: GridI
                 </p>
               )}
             </div>
-            <div className="text-xs text-gray-500 px-2 sm:px-3 py-1">
+            <div className="text-xs text-gray-500 py-1">
               {source}
             </div>
           </div>

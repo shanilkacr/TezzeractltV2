@@ -79,7 +79,7 @@ export const Hero = () => {
           </p>
         </div>
         <div className="flex justify-center mt-8">
-          <button className="bg-gradient-to-r font-semibold from-white to-[#9AE1FE] text-black py-3 px-5 rounded-xl ">
+          <button className="bg-gradient-to-r font-medium from-white to-[#9AE1FE] text-black py-3 px-5 rounded-xl ">
             Book a Call
           </button>
         </div>

@@ -357,7 +357,7 @@ export function ContactSection() {
                     <button
                       type="submit"
                       disabled={isSubmitting}
-                      className="w-full bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 px-6 rounded-lg transition-colors duration-200 flex items-center justify-center space-x-2 disabled:opacity-50"
+                      className="w-full bg-gradient-to-r from-white to-[#9AE1FE] text-black font-medium py-3 px-6 rounded-lg transition-colors duration-200 flex items-center justify-center space-x-2 disabled:opacity-50"
                     >
                       {isSubmitting ? (
                         <>

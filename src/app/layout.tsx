@@ -5,6 +5,7 @@ import { Figtree } from "next/font/google";
 import clsx from "clsx";
 import "./globals.css";
 import { b } from "motion/react-client";
+import favicon from "../../public/favicon.ico";
 
 const figtree = Figtree({ subsets: ["latin"] });
 
@@ -19,13 +20,14 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+      <head>
+        <link rel="icon" href={favicon.src} />
+      </head>
       <body className={clsx(figtree.className, "antialiased", "bg-[#121212]")}>
-      
-      <MainNav />
+        <MainNav />
         <main>{children}</main>
-         
+
         <Footer />
-             
       </body>
     </html>
   );

@@ -47,7 +47,7 @@ export const CallToAction = () => {
       <div className=" absolute w-full left-1/2 top-[110vh] -translate-x-1/2 z-10 mx-auto  flex items-center justify-center">
         <motion.div
           ref={borderdDivRef}
-          className="border border-white/15 bg-[#121212] py-[60px] rounded-xl overflow-hidden relative group w-full max-w-6xl mx-auto"
+          className="border border-white/15 bg-[#121212] py-[60px] rounded-[30px] overflow-hidden relative group w-full max-w-6xl mx-auto"
         >
           <div
             className="absolute inset-0 bg-[transparent] bg-blend-overlay [mask-image:radial-gradient(70%_70%_at_50%_50%,black,transparent)] group-hover:opacity-0 transition duration-700"
