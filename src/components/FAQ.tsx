@@ -49,8 +49,8 @@ export const FAQ = () => {
   };
 
   return (
-    <section className="bg-[#121212] ">
-      <div className="max-w-4xl mx-auto px-6">
+    <section className="bg-[#121212] h-[100vh] z-10">
+      <div className="max-w-4xl mx-auto px-6 z-10 ">
         <div className="text-center mb-12">
           <h2 className="text-4xl md:text-5xl font-medium text-white mb-4">
 FAQ          </h2>

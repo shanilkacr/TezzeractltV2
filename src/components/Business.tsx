@@ -13,7 +13,7 @@ import Video from "../assets/images/video.png";
 
 export function GlowingEffectDemo() {
   return (
-    <div className="container mx-auto px-4 sm:px-6 lg:px-[156px] max-w-7xl">
+    <div className="container mx-auto px-4 sm:px-6 lg:px-[156px] max-w-7xl h-[180vh]">
       <div className="py-8 sm:py-12 text-white">
         <h2 className="text-center font-medium text-3xl sm:text-4xl md:text-5xl lg:text-6xl tracking-tighter leading-tight">
           Transform Every Part of Your Business with AI          

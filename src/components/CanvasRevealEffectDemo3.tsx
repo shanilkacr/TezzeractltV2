@@ -35,12 +35,12 @@ function Card({ text, hoverText }: CardProps) {
 
   return (
     <div
-      className="innercontainer p-5 rounded-[20px] h-[338px] w-[266px] flex flex-col lg:flex-row overflow-hidden items-center justify-center bg-black  relative"
+      className="innercontainer p-5 rounded-[20px] h-[338px] w-[266px] flex flex-col lg:flex-row overflow-hidden items-center justify-center bg-[#1b3946]  relative"
       onMouseEnter={() => setHovered(true)}
       onMouseLeave={() => setHovered(false)}
     >
       <motion.div
-        className="absolute rounded-[20px] inset-0 border-[0.5px] border-[#00AAF0]"
+        className="absolute rounded-[20px] inset-0 border-2 border-[#00AAF0]"
         style={{
           WebkitMaskImage: maskImage,
           maskImage,
@@ -53,9 +53,9 @@ function Card({ text, hoverText }: CardProps) {
         className="md:text-xl text-xl font-normal text-center text-white relative z-20 max-w-2xl mx-auto"
         key={hovered ? 'hovered' : 'normal'} // Key change triggers animation
         initial={{ opacity: 0, y: 10 }}
-        animate={{ opacity: 1, y: 0 }}
-        exit={{ opacity: 0, y: -10 }}
-        transition={{ duration: 0.2 }}
+        animate={{ opacity: 1, y: -10 }}
+        exit={{ opacity: 0, y: 10 }}
+        transition={{ duration: 1 }}
       >
         {hovered ? hoverText : text}
       </motion.p>
@@ -65,7 +65,7 @@ function Card({ text, hoverText }: CardProps) {
           <motion.div
             initial={{ opacity: 0.5 }}
             animate={{ opacity: 1 }}
-            exit={{ opacity: 0.5 }}
+            exit={{ opacity: 1 }}
             className="h-full w-full absolute inset-0"
           >
             <CanvasRevealEffect
@@ -73,12 +73,12 @@ function Card({ text, hoverText }: CardProps) {
               containerClassName="bg-transparent"
               colors={[[0, 169, 238, 1]]}
               opacities={ [0.7, 0.7, 0.8, 0.8, 0.8, 0.9, 0.9, 1, 1, 1]}
-              dotSize={3}
+              dotSize={2}
             />
           </motion.div>
         )}
       </AnimatePresence>
-      <div className="absolute inset-0 [mask-image:radial-gradient(400px_at_center,white,transparent)] bg-black/50 dark:bg-black/90" />
+      <div className="absolute inset-0 [mask-image:radial-gradient(500px_at_center,white,transparent)] bg-black/70" />
     </div>
   );
 }

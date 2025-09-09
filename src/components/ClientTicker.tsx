@@ -1,20 +1,26 @@
 "use client";
 import Image from "next/image";
-import acmeLogo from "../assets/images/acme.png";
-import quantumLogo from "../assets/images/quantum.png";
-import echoLogo from "../assets/images/echo.png";
-import celestialLogo from "../assets/images/celestial.png";
-import pulseLogo from "../assets/images/pulse.png";
-import apexLogo from "../assets/images/apex.png";
+import Logo20 from "../assets/images/image20.png";
+import Logo21 from "../assets/images/image21.png";
+import Logo26 from "../assets/images/image26.png";
+import Logo27 from "../assets/images/image27.png";
+import Logo28 from "../assets/images/image28.png";
+import Logo29 from "../assets/images/image29.png";
+import Logo31 from "../assets/images/image31.png";
+import Logo32 from "../assets/images/image32.png";
+import Logo33 from "../assets/images/image33.png";
 import { motion } from "framer-motion";
 
 const images = [
-  { src: acmeLogo, alt: "Acme Logo" },
-  { src: quantumLogo, alt: "Quantum Logo" },
-  { src: echoLogo, alt: "Echo Logo" },
-  { src: celestialLogo, alt: "Celestial Logo" },
-  { src: pulseLogo, alt: "Pulse Logo" },
-  { src: apexLogo, alt: "Apex Logo" },
+  { src: Logo20, alt: "Acme Logo" },
+  { src: Logo21, alt: "Quantum Logo" },
+  { src: Logo26, alt: "Echo Logo" },
+  { src: Logo27, alt: "Celestial Logo" },
+  { src: Logo28, alt: "Pulse Logo" },
+  { src: Logo29, alt: " Logo" },
+  { src: Logo31, alt: " Logo" },
+  { src: Logo32, alt: " Logo" },
+  { src: Logo33, alt: " Logo" },
 ];
 
 export const ClientTicker = () => {

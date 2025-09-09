@@ -10,7 +10,7 @@ export default function AboutPage() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   return (
-    <div className="bg-[#121212] min-h-screen">
+    <div className="bg-[#121212]">
    
       
   
