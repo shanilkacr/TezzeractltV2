@@ -11,15 +11,8 @@ export default function AboutPage() {
 
   return (
     <div className="bg-[#121212]">
-   
-      
-  
-      
       <AboutSection />
-      <ClientTicker />
-
       <CallToAction />
-
     </div>
   );
 }
