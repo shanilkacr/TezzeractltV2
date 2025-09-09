@@ -3,7 +3,7 @@ import { AuroraText } from "./Auratext";
 
 // Import your different icons here
 import AutomationIcon from "../assets/icons/automate.png"; // Replace with your actual icon path
-import TeamIcon from "../assets/icons/agent.png"; // Replace with your actual icon path
+import TeamIcon from "../assets/icons/agents.png"; // Replace with your actual icon path
 import UpgradeIcon from "../assets/icons/business.png"; // Replace with your actual icon path
 import ContentIcon from "../assets/icons/create.png"; // Replace with your actual icon path
 
