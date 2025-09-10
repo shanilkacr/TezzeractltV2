@@ -26,7 +26,7 @@ function BookCall() {
         </h2>
 
         <iframe
-          src="https://meet.brevo.com/thefind-hotel/borderless?l=30-minute-meeting"
+          src="https://meet.brevo.com/shanilka-rajapaksha-1"
           className="w-full h-[600px] border-0"
           title="Brevo Booking Form"
         ></iframe>

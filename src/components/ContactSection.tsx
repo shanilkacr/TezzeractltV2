@@ -154,8 +154,8 @@ export function ContactSection() {
     setIsSubmitting(true);
     setSubmitError('');
 
-    const senderEmail = 'info@tezzeract.net'; // Replace with your verified Brevo sender email
-    const adminEmail = 'wehan@tezzeract.com'; // Replace with your admin email
+    const senderEmail = 'info@tezzeract.lt'; //  Brevo sender email
+    const adminEmail = 'wehan@tezzeract.com'; //  admin email
 
     const emailToAdmin = {
       sender: { name: 'Website Contact', email: senderEmail },

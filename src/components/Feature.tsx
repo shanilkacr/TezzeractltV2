@@ -10,7 +10,7 @@ export const Feature = ({
 }: {
   title: string;
   description: string;
-  icon: string;
+  icon: any;
 }) => {
   const offsetX = useMotionValue(-100);
   const offsetY = useMotionValue(-100);
