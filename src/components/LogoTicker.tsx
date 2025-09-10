@@ -25,7 +25,7 @@ const images = [
 
 export const LogoTicker = () => {
   return (
-    <div className=" text-white py-[72px] sm:py-24">
+    <div className=" text-white py-[72px] sm:py-24 mt-[-200px]">
       <div className="container mx-auto">
         <h2 className="text-xl text-center text-white/70">
           Powered by the Best in AI & Automation{" "}
