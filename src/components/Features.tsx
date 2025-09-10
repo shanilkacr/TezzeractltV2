@@ -37,7 +37,7 @@ const features = [
 export const Features = () => {
   return (
     <div className="text-white w-full py-[100px]">
-      {/* px-4 sm:px-6 md:px-8 lg:px-12 xl:px-16 2xl:px-[292px] */}
+      
       <div className=" mx-auto ">
         <h2 className="text-center font-medium text-3xl sm:text-4xl md:text-5xl lg:text-6xl tracking-tighter leading-tight">
           Smart <AuroraText>AI</AuroraText> Solutions,
