@@ -1,1 +1,1 @@
-export default function Avatar (props: HTMLAtt)
+// export default function Avatar (props: HTMLAtt)

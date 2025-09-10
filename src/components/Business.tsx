@@ -1,4 +1,5 @@
 import React from 'react';
+import Image from 'next/image';
 import { Users, Zap, Palette, Package, MessageSquare, FileText } from "lucide-react";
 import { GlowingEffect } from "./GlowingEffect";
 import { AuroraText } from "./Auratext";

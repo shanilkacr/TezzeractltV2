@@ -46,9 +46,9 @@ export const Features = () => {
         </h2>
         <div className="max-w-xl mx-auto">
           <p className="text-center mt-4 sm:mt-5 text-lg sm:text-xl text-white/70 px-4 sm:px-0">
-            Whether you're drowning in tasks or just starting to scale, our
+           {` Whether you're drowning in tasks or just starting to scale, our
             AI-driven solutions are designed to simplify, automate, and
-            accelerate every part of your business.
+            accelerate every part of your business.`}
           </p>
         </div>
         <div className="mt-8 sm:mt-12 lg:mt-16 grid grid-cols-1 md:grid-cols-4 -gap-2 ">

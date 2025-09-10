@@ -70,9 +70,9 @@ export const CallToActioncopy = () => {
               Ready to Transform Your Business?
             </h2>
             <p className="text-lg max-w-[1000px] md:text-xl text-center px-4 mt-4 mx-auto">
-              Don't let manual processes hold you back. Our automation experts
+        {`      Don't let manual processes hold you back. Our automation experts
               are ready to design a custom solution that will streamline your
-              operations and accelerate your growth.
+              operations and accelerate your growth.`}
             </p>
             <div className="flex justify-center mt-6">
               <button className="bg-white text-black py-3 px-5 rounded-lg font-medium">

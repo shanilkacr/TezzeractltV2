@@ -251,8 +251,8 @@ export function ContactSection() {
               Get In Touch
             </h2>
             <p className="text-xl text-neutral-300 max-w-2xl mx-auto">
-              Have a question or want to work together? We'd love to hear from you.
-            </p>
+{`              Have a question or want to work together? We'd love to hear from you.
+`}            </p>
           </div>
 
           <div className="px-12  md:w-[80%] sm:w-full ">
@@ -266,7 +266,7 @@ export function ContactSection() {
                     Message Sent!
                   </h3>
                   <p className="text-neutral-300 mb-6">
-                    Thank you for reaching out. We'll get back to you shortly.
+                   {` Thank you for reaching out. We'll get back to you shortly.`}
                   </p>
                   <button
                     onClick={() => setIsSubmitted(false)}

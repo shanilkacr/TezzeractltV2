@@ -1,4 +1,5 @@
 import AboutFeatureCard from "./AboutFeatureCard";
+import Image from "next/image";
 import TezImage from "../assets/images/tezzeractofficial_logo.jpeg";
 
 export default function AboutFeatures() {
@@ -8,7 +9,10 @@ export default function AboutFeatures() {
    <AboutFeatureCard title="Industries on" description="sfownfjsdngfdsjongsdjf"></AboutFeatureCard>
    <div>
     <div className="">
-<img src={TezImage} alt="Tezzeract Logo" />
+    <Image
+      src={TezImage} alt="Tezzeract Logo"
+   
+    />
     </div>
    </div>
     <AboutFeatureCard title="dsfdsfsfs" description="sfownfjsdng23r32rfdsjongsdjf"></AboutFeatureCard>

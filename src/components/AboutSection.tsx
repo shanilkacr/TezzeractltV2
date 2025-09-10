@@ -3,11 +3,9 @@ import { IconMail, IconPhone, IconMapPin, IconSend } from '@tabler/icons-react';
 import { useMotionTemplate, useMotionValue, motion } from 'motion/react';
 import { AnimatedTooltip } from "./animated-tooltip";
 import wehanImage from "../assets/images/wehan.png";
-import AboutFeatures from './AboutFeatures';
 import shanilkaImage from "../assets/images/shanilka.png";
-import { div } from 'motion/react-client';
 import { CanvasRevealEffectDemo3 } from './CanvasRevealEffectDemo3';
-import { FAQ } from './FAQ';
+
 import AutomationTabs from './AutomationTabs';
 
 export function AboutSection() {
@@ -69,13 +67,13 @@ export function AboutSection() {
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-medium text-white mb-4">
-              We're on a mission to make work feel effortless.
+              {`We're on a mission to make work feel effortless.`}
             </h2>
-            <p className="text-xl text-neutral-500 mx-auto">
+            <p className="text-xl text-neutral-500 mx-auto"> 
               Tezzeract is built for the purpose to help businesses work smarter, not harder by putting the power of AI into the hands of teams that need it most.
             </p>
             <p className='text-xl text-neutral-500 mx-auto'>
-              Whether you're a startup founder, an HR lead, or running a scaling business, chances are you're struggling too much. We help businesses cut through the chaos with no-code automations, smart AI tools, and creative solutions built for maximum efficiency.
+              {`Whether you're a startup founder, an HR lead, or running a scaling business, chances are you're struggling too much. We help businesses cut through the chaos with no-code automations, smart AI tools, and creative solutions built for maximum efficiency.`}
             </p>
           </div>
           <div className="flex flex-row items-center justify-center mb-10 w-full">

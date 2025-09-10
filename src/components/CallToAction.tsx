@@ -65,8 +65,8 @@ export const CallToAction = () => {
               <h2 className="text-base md:text-5xl mx-auto tracking-tighter font-medium text-center pb-6 px-[30px] mt-5">
 AI-driven automations for<br/> everyone. </h2>
             <p className="text-lg text-white/70 max-w-[1000px] md:text-xl text-center px-10 mx-auto">
-              Don't let manual processes hold you back. Our automation experts are ready to design a custom solution that will streamline your operations and accelerate your growth.
-            </p>
+{`              Don't let manual processes hold you back. Our automation experts are ready to design a custom solution that will streamline your operations and accelerate your growth.
+`}            </p>
             </div> 
             <div className="flex justify-center py-10 mt-6">
               <button className="bg-gradient-to-r from-[#00A9EE] to-[#00378A] text-white py-4 px-5 rounded-2xl font-light  hover:shadow-[inset_0_-6px_10px_#ffffff3f] transform-gpu transition-all duration-300 ease-in-out">

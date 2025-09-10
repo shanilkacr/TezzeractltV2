@@ -1,6 +1,7 @@
 "use client";
 import { useEffect, useRef } from "react";
 import { motion, useMotionTemplate, useMotionValue } from "framer-motion";
+import Image from "next/image";
 
 export const Feature = ({
   title,
@@ -30,7 +31,7 @@ export const Feature = ({
   return (
     <div className="border border-l-0 border-white/5 px-20 py-10 text-center sm:flex-1 relative">
       <motion.div
-        className="absolute  inset-0 border-l-0 border-[0.5px] border-[#00AAF0] "
+        className="absolute inset-0 border-l-0 border-[0.5px] border-[#00AAF0] "
         style={{
           WebkitMaskImage: maskImage,
           maskImage,
@@ -38,8 +39,8 @@ export const Feature = ({
         ref={border}
       ></motion.div>
       <div className="inline-flex h-16 w-16 text-black justify-center items-center rounded-lg">
-        <img 
-          src={icon.src}
+        <Image
+          src={icon}
           alt={title} 
           className="w-16 h-16 object-contain"
         />
