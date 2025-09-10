@@ -6,7 +6,7 @@ import wehanImage from "../assets/images/wehan.png";
 import shanilkaImage from "../assets/images/shanilka.png";
 import { CanvasRevealEffectDemo3 } from './CanvasRevealEffectDemo3';
 
-import AutomationTabs from './AutomationTabs';
+// import AutomationTabs from './AutomationTabs';
 
 export function AboutSection() {
   const people = [
