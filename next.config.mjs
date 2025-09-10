@@ -27,6 +27,21 @@ const nextConfig = {
 
     return config;
   },
+  images: {
+    remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: 'images.unsplash.com',
+        pathname: '/**', // Allow all paths from Unsplash
+      },
+      // Optionally add Imgix if you're using it
+      {
+        protocol: 'https',
+        hostname: 'assets.imgix.net', // Replace with your Imgix subdomain if using a custom one
+        pathname: '/**',
+      },
+    ],
+  },
 };
 
 export default nextConfig;

@@ -1,24 +1,33 @@
-import { useState, useEffect, useRef } from 'react';
-import { motion, useMotionTemplate, useMotionValue } from 'framer-motion';
+import { useState } from 'react';
 
-const FeatureCard = ({ title, description, highlighted }) => {
+import { motion, useMotionTemplate, useMotionValue } from 'framer-motion';
+import { useEffect, useRef } from 'react';
+
+// Define the TypeScript interface for FeatureCard props
+interface FeatureCardProps {
+  title: string;
+  description: string;
+  highlighted: boolean;
+}
+
+const FeatureCard = ({ title, description, highlighted }: FeatureCardProps) => {
   const offsetX = useMotionValue(-100);
   const offsetY = useMotionValue(-100);
   const maskImage = useMotionTemplate`radial-gradient(200px 200px at ${offsetX}px ${offsetY}px, black, transparent)`;
-  const border = useRef(null);
+  const border = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    const updateMousePosition = (e) => {
+    const updateMousePosition = (e: MouseEvent) => {
       if (!border.current) return;
-      const borderRect = border.current?.getBoundingClientRect();
+      const borderRect = border.current.getBoundingClientRect();
       offsetX.set(e.x - borderRect.x);
       offsetY.set(e.y - borderRect.y);
     };
-    window.addEventListener("mousemove", updateMousePosition);
+    window.addEventListener('mousemove', updateMousePosition);
     return () => {
-      window.removeEventListener("mousemove", updateMousePosition);
+      window.removeEventListener('mousemove', updateMousePosition);
     };
-  }, []);
+  }, [offsetX, offsetY]);
 
   return (
     <div className="border border-white/5 px-8 rounded-xl py-10 text-center relative group">
@@ -31,12 +40,8 @@ const FeatureCard = ({ title, description, highlighted }) => {
         ref={border}
       />
       <div className="relative rounded-xl z-10 border-red-500">
-        <h3 className="text-xl font-medium mb-4 text-white">
-          {title}
-        </h3>
-        <p className="text-white/70 text-sm leading-relaxed">
-          {description}
-        </p>
+        <h3 className="text-xl font-medium mb-4 text-white">{title}</h3>
+        <p className="text-white/70 text-sm leading-relaxed">{description}</p>
         {highlighted && (
           <div className="mt-4 inline-block px-3 py-1 bg-[#00AAF0]/20 border border-[#00AAF0]/30 rounded-full text-xs text-[#00AAF0]">
             Featured
