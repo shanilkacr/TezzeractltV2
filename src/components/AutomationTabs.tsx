@@ -1,5 +1,4 @@
 import { useState } from 'react';
-
 import { motion, useMotionTemplate, useMotionValue } from 'framer-motion';
 import { useEffect, useRef } from 'react';
 
@@ -27,7 +26,8 @@ const FeatureCard = ({ title, description, highlighted }: FeatureCardProps) => {
     return () => {
       window.removeEventListener('mousemove', updateMousePosition);
     };
-  }, [offsetX, offsetY]);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
   return (
     <div className="border border-white/5 px-8 rounded-xl py-10 text-center relative group">
@@ -53,11 +53,14 @@ const FeatureCard = ({ title, description, highlighted }: FeatureCardProps) => {
 };
 
 const AutomationTabs = () => {
-  const [activeTab, setActiveTab] = useState('Automation');
+  // Define the tab type
+  type TabType = 'Automation' | 'Agents' | 'AI for Business' | 'AI for Creatives';
+  
+  const [activeTab, setActiveTab] = useState<TabType>('Automation');
 
-  const tabs = ['Automation', 'Agents', 'AI for Business', 'AI for Creatives'];
+  const tabs: TabType[] = ['Automation', 'Agents', 'AI for Business', 'AI for Creatives'];
 
-  const automationData = {
+  const automationData: Record<TabType, Array<{title: string; description: string; highlighted: boolean}>> = {
     'Automation': [
       {
         title: 'Task & Process Automation',
@@ -210,8 +213,7 @@ const AutomationTabs = () => {
           </div>
         </div>
 
-        {/* Content Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 ">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
           {automationData[activeTab].map((item, index) => (
             <FeatureCard
               key={index}

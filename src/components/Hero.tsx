@@ -12,8 +12,8 @@ import { TextReveal } from "./text-reveal";
 import Link from "next/link";
 
 export const Hero = () => {
-  const aiImageRef = useRef(null);
-  const interImageRef = useRef(null);
+  const aiImageRef = useRef<HTMLImageElement>(null);
+  const interImageRef = useRef<HTMLImageElement>(null);
 
   useEffect(() => {
     const handleScroll = () => {

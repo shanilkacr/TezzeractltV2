@@ -10,12 +10,13 @@ export const Feature = ({
 }: {
   title: string;
   description: string;
-  icon: string;
+  icon: any;
 }) => {
   const offsetX = useMotionValue(-100);
   const offsetY = useMotionValue(-100);
   const maskImage = useMotionTemplate`radial-gradient(200px 200px at ${offsetX}px ${offsetY}px, black, transparent)`;
   const border = useRef<HTMLDivElement>(null);
+  
   useEffect(() => {
     const updateMousePosition = (e: MouseEvent) => {
       if (!border.current) return;
@@ -27,7 +28,8 @@ export const Feature = ({
     return () => {
       window.removeEventListener("mousemove", updateMousePosition);
     };
-  }, []);
+  }, [offsetX, offsetY]);
+  
   return (
     <div className="border border-l-0 border-white/5 px-20 py-10 text-center sm:flex-1 relative">
       <motion.div
