@@ -27,14 +27,14 @@ export function MainNav() {
 
   return (
     <Navbar>
-      {/* ✅ Desktop Navbar */}
       <NavBody>
         <NavbarLogo />
         <NavItems items={navItems} />
-        <ShimmerButton>Get Started</ShimmerButton>
+        <ShimmerButton  
+        
+        >Get Started</ShimmerButton>
       </NavBody>
 
-      {/* ✅ Mobile Navbar */}
       <MobileNav>
         <MobileNavHeader>
           <NavbarLogo />
