@@ -34,7 +34,7 @@ export const Hero = () => {
   }, []);
 
   return (
-    <div className="bg-[#121212] text-white bg-[radial-gradient(190%_200%_at_center_80%,#01A6EB_10%,#0060EB_15%,#00398C_25%,#121212_40%)] py-[120px] sm:py-[120px] relative overflow-hidden lg:h-[95vh]">
+    <div className="bg-[#121212] text-white bg-[radial-gradient(190%_100%_at_center_90%,#01A6EB_10%,#0060EB_15%,#00398C_25%,#121212_40%)] sm:bg-[radial-gradient(190%_200%_at_center_80%,#01A6EB_10%,#0060EB_15%,#00398C_25%,#121212_40%)] py-[120px] sm:py-[120px] relative overflow-hidden h-[70vh] lg:h-[95vh]">
       {/* Main content circle/div - Higher z-index */}
       <div className="absolute h-[500px] w-[1200px] sm:w-[3400px] sm:h-[1200px] lg:w-[3000px] lg:h-[1400px] sm:py-24 rounded-[100%] bg-[#121212] left-1/2 -translate-x-1/2 border-2 border-[#84DBFF] bg-[radial-gradient(closest-side,#121212_84%,#003D8F)] sm:top-[calc(100%-320px)] top-[calc(100%-100px)] z-20 ">
         {/* Meteors Effect - Inside the circular div */}

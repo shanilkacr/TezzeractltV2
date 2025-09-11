@@ -61,9 +61,9 @@ export function MainNav() {
 
           {/* CTA button in mobile menu */}
           <div className="pt-4 border-t border-gray-200 dark:border-neutral-700">
-            <NavbarButton variant="primary" className="w-full">
-              Get Started
-            </NavbarButton>
+            <ShimmerButton  
+        
+        >Get Started</ShimmerButton>
           </div>
         </MobileNavMenu>
       </MobileNav>

@@ -41,7 +41,7 @@ export const CallToAction = () => {
   return (
     <section className=" flex flex-row text-white bg-[radial-gradient(220%_200%_at_center_0.1%,#01A6EB_10%,#0060EB_15%,#00398C_25%,#121212_40%)] py-[72px] relative overflow-hidden lg:h-[120vh] " >
       {/* Bottom arc circle behind the CTA */}
-      <div className="absolute w-[1600px] sm:w-[4000px] sm:h-[1600px] lg:w-[4000px] lg:h-[2000px] rounded-[100%] left-1/2 -translate-x-1/2 border-2 border-[#84DBFF] bg-[radial-gradient(closest-side,#121212_84%,#003D8F)] bottom-[80%] z-0">
+      <div className="absolute w-[1600px] sm:w-[4000px] sm:h-[1600px] lg:w-[4000px] lg:h-[2000px] rounded-[100%] left-1/2 -translate-x-1/2 border-2 border-[#84DBFF] bg-[radial-gradient(closest-side,#121212_84%,#003D8F)] bottom-[60%] z-0">
       </div>
        
       <div className="  w-full z-10 mx-auto  flex items-center justify-center">
@@ -62,7 +62,7 @@ export const CallToAction = () => {
           ></motion.div>
           <div className="relative ">
             <div className="mt-14 ">
-              <h2 className="text-base md:text-5xl mx-auto tracking-tighter font-medium text-center pb-6 px-[30px] mt-5">
+              <h2 className=" text-3xl md:text-5xl mx-auto tracking-tighter font-medium text-center pb-6 px-[30px] mt-5">
 AI-driven automations for<br/> everyone. </h2>
             <p className="text-lg text-white/70 max-w-[1000px] md:text-xl text-center px-10 mx-auto">
 {`              Don't let manual processes hold you back. Our automation experts are ready to design a custom solution that will streamline your operations and accelerate your growth.

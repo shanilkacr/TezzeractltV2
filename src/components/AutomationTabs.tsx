@@ -54,11 +54,11 @@ const FeatureCard = ({ title, description, highlighted }: FeatureCardProps) => {
 
 const AutomationTabs = () => {
   // Define the tab type
-  type TabType = 'Automation' | 'Agents' | 'AI for Business' | 'AI for Creatives';
+  type TabType = 'Automation' | 'Agents' | 'Business' | 'Creatives';
   
   const [activeTab, setActiveTab] = useState<TabType>('Automation');
 
-  const tabs: TabType[] = ['Automation', 'Agents', 'AI for Business', 'AI for Creatives'];
+  const tabs: TabType[] = ['Automation', 'Agents', 'Business', 'Creatives'];
 
   const automationData: Record<TabType, Array<{title: string; description: string; highlighted: boolean}>> = {
     'Automation': [
@@ -125,7 +125,7 @@ const AutomationTabs = () => {
         highlighted: false
       }
     ],
-    'AI for Business': [
+    'Business': [
       {
         title: 'Business Intelligence Dashboard',
         description: 'AI-powered analytics that turn your business data into actionable insights and forecasts.',
@@ -157,7 +157,7 @@ const AutomationTabs = () => {
         highlighted: false
       }
     ],
-    'AI for Creatives': [
+    'Creatives': [
       {
         title: 'Content Generation Suite',
         description: 'AI-powered writing, copywriting, and content creation for blogs, social media, and marketing.',
@@ -195,23 +195,23 @@ const AutomationTabs = () => {
     <div className="bg-[#121212] text-white py-[70px] sm:py-24">
       <div className="max-w-6xl mx-auto px-6">
         {/* Tab Navigation */}
-        <div className="flex justify-center mb-12">
-          <div className="flex bg-[#27272A] rounded-xl p-1 gap-10 backdrop-blur-sm">
-            {tabs.map((tab) => (
-              <button
-                key={tab}
-                onClick={() => setActiveTab(tab)}
-                className={`px-12 py-2 rounded-xl text-sm font-medium transition-all duration-300 whitespace-nowrap ${
-                  activeTab === tab
-                    ? 'bg-[#121212] text-white shadow-lg'
-                    : 'text-gray-400 hover:text-white'
-                }`}
-              >
-                {tab}
-              </button>
-            ))}
-          </div>
-        </div>
+       <div className="flex justify-center mb-8 sm:mb-12  px-1 lg:px-8">
+  <div className="flex bg-[#27272A] rounded-xl p-1 gap-2 sm:gap-4 md:gap-6 lg:gap-8 xl:gap-10 backdrop-blur-sm w-full max-w-xxs sm:max-w-lg md:max-w-lg lg:max-w-2xl xl:max-w-none xl:w-auto overflow-hidden">
+    {tabs.map((tab) => (
+      <button
+        key={tab}
+        onClick={() => setActiveTab(tab)}
+        className={`px-3 sm:px-6 md:px-6 lg:px-8 xl:px-12 py-2 rounded-xl text-xs sm:text-sm font-medium transition-all duration-300 whitespace-nowrap flex-1 sm:flex-none min-w-0 ${
+          activeTab === tab
+            ? 'bg-[#121212] text-white shadow-lg'
+            : 'text-gray-400 hover:text-white'
+        }`}
+      >
+        <span className="block truncate sm:block">{tab}</span>
+      </button>
+    ))}
+  </div>
+</div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
           {automationData[activeTab].map((item, index) => (

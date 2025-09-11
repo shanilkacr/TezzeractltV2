@@ -20,14 +20,14 @@ export const ProductShowcase = () => {
         <div className="flex justify-center flex-col items-center text-center">
           <div className="text-[120px] -mt-[200px] sm:-mt-[450px] font-medium text-white text-center">
             <span>
-              <TextReveal className="text-lg font-bold">
+              <TextReveal className="text-2xl sm:text-lg font-bold">
              {` Busywork is stealing your team's time. Let's fix that`}
 
               </TextReveal>
               <br />
             </span>
           </div>
-          <div className="px-[53px] lg:px-[145px]">
+          <div className="px-[53px] xl:px-[145px] lg:px-[5px]">
           <p className="text-white/70 text-lg py-5  -mt-[550px]">
             Every hour your team spends chasing emails, copying data, or doing
             repetitive tasks is an hour they could’ve spent creating, growing,

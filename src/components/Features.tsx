@@ -51,7 +51,7 @@ export const Features = () => {
             accelerate every part of your business.`}
           </p>
         </div>
-        <div className="mt-8 sm:mt-12 lg:mt-16 grid grid-cols-1 md:grid-cols-4 -gap-2 ">
+        <div className="mt-8 sm:mt-12 lg:mt-16 grid grid-cols-1 lg:grid-cols-4 -gap-2 ">
           {features.map(({ title, description, icon }) => (
             <Feature title={title} description={description} icon={icon} key={title} />
           ))}
