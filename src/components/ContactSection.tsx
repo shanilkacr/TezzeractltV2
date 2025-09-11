@@ -3,14 +3,15 @@ import { IconMail, IconPhone, IconMapPin, IconSend, IconCheck, IconAlertCircle }
 import { useMotionTemplate, useMotionValue, MotionValue, motion } from 'motion/react';
 import axios from 'axios';
 
-const BrevoAPIKey = process.env.NEXT_PUBLIC_BREVO_API_KEY;
-
 interface FormData {
   name: string;
   email: string;
   subject: string;
   message: string;
+
 }
+
+
 
 interface AnimatedInputProps {
   className?: string;
@@ -154,78 +155,33 @@ export function ContactSection() {
     setIsSubmitting(true);
     setSubmitError('');
 
-    const senderEmail = 'info@tezzeract.net'; // Replace with your verified Brevo sender email
-    const adminEmail = 'wehan@tezzeract.com'; // Replace with your admin email
-
-    const emailToAdmin = {
-      sender: { name: 'Website Contact', email: senderEmail },
-      to: [{ email: adminEmail, name: 'Admin' }],
-      subject: 'New Contact Form Submission',
-      htmlContent: `
-        <html>
-          <body>
-            <h2>New Submission</h2>
-            <p><strong>Name:</strong> ${formData.name}</p>
-            <p><strong>Email:</strong> ${formData.email}</p>
-            <p><strong>Subject:</strong> ${formData.subject}</p>
-            <p><strong>Message:</strong> ${formData.message}</p>
-          </body>
-        </html>
-      `,
-    };
-
-    const emailToCustomer = {
-      sender: { name: 'Website Contact', email: senderEmail },
-      to: [{ email: formData.email, name: formData.name }],
-      subject: 'Thank You for Your Submission',
-      htmlContent: `
-        <html>
-          <body>
-            <h2>Thank You, ${formData.name}!</h2>
-            <p>We received your message and will get back to you soon.</p>
-            <p><strong>Your Details:</strong></p>
-            <p><strong>Email:</strong> ${formData.email}</p>
-            <p><strong>Subject:</strong> ${formData.subject}</p>
-            <p><strong>Message:</strong> ${formData.message}</p>
-          </body>
-        </html>
-      `,
-    };
-
     try {
-      await axios.post('https://api.brevo.com/v3/smtp/email', emailToAdmin, {
+      const response = await axios.post('/api/contact', formData, {
         headers: {
-          accept: 'application/json',
-          'api-key': BrevoAPIKey,
-          'content-type': 'application/json',
+          'Content-Type': 'application/json',
         },
       });
 
-      await axios.post('https://api.brevo.com/v3/smtp/email', emailToCustomer, {
-        headers: {
-          accept: 'application/json',
-          'api-key': BrevoAPIKey,
-          'content-type': 'application/json',
-        },
-      });
-
-      setIsSubmitting(false);
-      setIsSubmitted(true);
-      setFormData({
-        name: '',
-        email: '',
-        subject: '',
-        message: ''
-      });
+      if (response.status === 200) {
+        setIsSubmitted(true);
+        setFormData({
+          name: '',
+          email: '',
+          subject: '',
+          message: ''
+        });
+      } else {
+        throw new Error('Unexpected response status');
+      }
     } catch (error: any) {
-      console.error('Error sending emails:', {
+      console.error('Error sending form:', {
         message: error.message,
         response: error.response?.data,
         status: error.response?.status,
-        request: error.request,
       });
+      setSubmitError(error.response?.data?.error || 'Failed to send message. Please try again.');
+    } finally {
       setIsSubmitting(false);
-      setSubmitError(error.response?.data?.message || 'Failed to send message. Please try again.');
     }
   };
 
@@ -237,6 +193,7 @@ export function ContactSection() {
             <div className="inline-flex relative">
               <h1 className="text-6xl sm:text-[104px] font-medium tracking-tighter text-center leading-tight">
                 <span>Reach Us</span>
+                
               </h1>
               <div className="absolute h-[500px] w-[1200px] sm:w-[3400px] sm:h-[1200px] lg:w-[3000px] lg:h-[1400px] sm:py-24 rounded-[100%] bg-[#121212] left-1/2 -translate-x-1/2 border-2 border-[#84DBFF] bg-[radial-gradient(closest-side,#121212_84%,#003D8F)] sm:top-[calc(100%-38px)] top-[calc(100%-100px)]"></div>
             </div>
@@ -382,6 +339,7 @@ export function ContactSection() {
                     )}
                   </form>
                 </div>
+                
               )}
             </div>
           </div>
