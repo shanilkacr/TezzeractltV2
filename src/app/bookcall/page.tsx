@@ -21,9 +21,15 @@ function BookCall() {
 
       {/* Right Side */}
       <div className="w-1/2 h-[150%] flex flex-col p-[100px] justify-center bg-white">
-        <h2 className=" text-4xl md:text-5xl font-medium text-[#9AE1FE] mb-4 ">
-          Take the first step to scale your company
-        </h2>
+     
+        <h2
+  className="text-base md:text-5xl mx-auto tracking-tighter font-medium text-center 
+             pb-6 px-[30px] mt-5 mb-4 
+             bg-gradient-to-r to-[#00A9EE] from-[#00378A] 
+             bg-clip-text text-transparent"
+>
+  Take the first step to scale your company
+</h2>
 
         <iframe
           src="https://meet.brevo.com/shanilka-rajapaksha-1"
