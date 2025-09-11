@@ -187,11 +187,11 @@ export function ContactSection() {
 
   return (
     <section id="contact" className="bg-[#121212]">
-      <div className="bg-[#121212] text-white bg-[linear-gradient(to_bottom,#121212,#00398C_34%,#0060EB_65%,#01A6EB_82%)] py-[72px] sm:py-[250px] relative overflow-clip lg:h-[60vh]">
+      <div className="bg-[#121212] text-white bg-[linear-gradient(to_bottom,#121212,#00398C_34%,#0060EB_65%,#01A6EB_82%)] py-[150px] md:py-[250px] relative overflow-clip h-[50vh] lg:h-[60vh]">
         <div className="container relative mx-auto">
           <div className="flex justify-center -mt-6">
             <div className="inline-flex relative">
-              <h1 className="text-6xl sm:text-[104px] font-medium tracking-tighter text-center leading-tight">
+              <h1 className="text-6xl sm:text-[104px] font-medium tracking-tighter text-center mb-[90px] sm:m-0 sm:mb-0 leading-none sm:leading-tight">
                 <span>Reach Us</span>
                 
               </h1>
@@ -201,18 +201,17 @@ export function ContactSection() {
         </div>
       </div>
       
-      <div className="container mx-auto pb-[100px]">
+      <div className=" mx-auto pb-[100px]">
         <div className="max-w-6xl mx-auto flex flex-col items-center">
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-medium text-white mb-4">
               Get In Touch
             </h2>
-            <p className="text-xl text-neutral-300 max-w-2xl mx-auto">
+            <p className="text-xl sm:px-0 px-14 text-neutral-300 mx-auto">
 {`              Have a question or want to work together? We'd love to hear from you.
 `}            </p>
           </div>
-
-          <div className="px-12  md:w-[80%] sm:w-full ">
+          <div className="sm:px-12  md:w-[80%] m:w-full ">
             <div className="space-y-8">
               {isSubmitted ? (
                 <div className="bg-neutral-800 rounded-xl p-6 border border-neutral-700 text-center">
@@ -326,7 +325,6 @@ export function ContactSection() {
                         </>
                       ) : (
                         <>
-                          <IconSend className="w-5 h-5" />
                           <span>Send Message</span>
                         </>
                       )}

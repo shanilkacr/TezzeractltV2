@@ -50,11 +50,11 @@ export function AboutSection() {
 
   return (
     <section id="about" className="bg-[#121212]">
-      <div className="bg-[#121212] text-white bg-[linear-gradient(to_bottom,#121212,#00398C_34%,#0060EB_65%,#01A6EB_82%)] py-[72px] sm:py-[250px] relative overflow-clip lg:h-[60vh]">
+      <div className="bg-[#121212] text-white bg-[linear-gradient(to_bottom,#121212,#00398C_34%,#0060EB_65%,#01A6EB_82%)] py-[150px] md:py-[250px] relative overflow-clip h-[50vh] lg:h-[60vh]">
         <div className="container relative mx-auto">
-          <div className="flex justify-center -mt-6">
+          <div className="flex justify-center  sm:-mt-6">
             <div className="inline-flex relative">
-              <h1 className="text-6xl sm:text-[104px] font-medium tracking-tighter text-center leading-tight">
+              <h1 className="text-[80px] sm:text-[104px] font-medium tracking-tighter text-center mb-[80px] sm:m-0 sm:mb-0 leading-none sm:leading-tight">
                 <span className="">We Are Tezzeract</span>
               </h1>
               <div className="absolute h-[500px] w-[1200px] sm:w-[3400px] sm:h-[1200px] lg:w-[3000px] lg:h-[1400px] sm:py-24 rounded-[100%] bg-[#121212] left-1/2 -translate-x-1/2 border-2 border-[#84DBFF] bg-[radial-gradient(closest-side,#121212_84%,#003D8F)] sm:top-[calc(100%-38px)] top-[calc(100%-100px)]"></div>

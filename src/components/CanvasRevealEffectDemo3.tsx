@@ -85,10 +85,10 @@ function Card({ text, hoverText }: CardProps) {
 
 export function CanvasRevealEffectDemo3() {
   return (
-    <div className="cardContainer flex flex-col lg:flex-row gap-20 !justify-center py-8">
-      <Card text="People First" hoverText="Putting people at the center of everything we do" />
-      <Card text="Customize" hoverText="Tailor solutions to your unique needs" />
-      <Card text="Innovation" hoverText="Pushing boundaries with cutting-edge technology" />
-    </div>
+    <div className="cardContainer flex flex-col sm:flex-col md:flex-col lg:flex-row gap-6 sm:gap-8 md:gap-12 lg:gap-16 xl:gap-20 justify-center items-center lg:items-stretch py-6 sm:py-8 px-4 sm:px-6 md:px-8 lg:px-4">
+  <Card text="People First" hoverText="Putting people at the center of everything we do" />
+  <Card text="Customize" hoverText="Tailor solutions to your unique needs" />
+  <Card text="Innovation" hoverText="Pushing boundaries with cutting-edge technology" />
+</div>
   );
 }
