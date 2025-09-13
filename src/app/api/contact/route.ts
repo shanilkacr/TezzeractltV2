@@ -52,7 +52,7 @@ export async function POST(request: NextRequest) {
     }
 
     const senderEmail = 'info@tezzeract.lt'; // Your verified Brevo sender email
-    const adminEmail = 'wehan@tezzeract.com'; // Your admin email
+    const adminEmail = 'shanilka@tezzeract.com'; // Your admin email
 
     // Email to admin
     const emailToAdmin = {
