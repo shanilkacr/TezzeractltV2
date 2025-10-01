@@ -20,7 +20,7 @@ export const ProductShowcase = () => {
         <div className="flex justify-center flex-col items-center text-center">
           <div className="text-[120px] -mt-[200px] sm:-mt-[450px] font-medium text-white text-center">
             <span>
-              <TextReveal className="text-2xl sm:text-lg font-bold">
+              <TextReveal className="text-2xl xl:text-lg sm:text-lg font-bold">
              {` Busywork is stealing your team's time. Let's fix that`}
 
               </TextReveal>
