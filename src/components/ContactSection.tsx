@@ -155,8 +155,46 @@ export function ContactSection() {
     setIsSubmitting(true);
     setSubmitError('');
 
+    const senderEmail = 'info@tezzeract.lt'; //  Brevo sender email
+    const adminEmail = 'wehan@tezzeract.com'; //  admin email
+
+    const emailToAdmin = {
+      sender: { name: 'Website Contact', email: senderEmail },
+      to: [{ email: adminEmail, name: 'Admin' }],
+      subject: 'New Contact Form Submission',
+      htmlContent: `
+        <html>
+          <body>
+            <h2>New Submission</h2>
+            <p><strong>Name:</strong> ${formData.name}</p>
+            <p><strong>Email:</strong> ${formData.email}</p>
+            <p><strong>Subject:</strong> ${formData.subject}</p>
+            <p><strong>Message:</strong> ${formData.message}</p>
+          </body>
+        </html>
+      `,
+    };
+
+    const emailToCustomer = {
+      sender: { name: 'Website Contact', email: senderEmail },
+      to: [{ email: formData.email, name: formData.name }],
+      subject: 'Thank You for Your Submission',
+      htmlContent: `
+        <html>
+          <body>
+            <h2>Thank You, ${formData.name}!</h2>
+            <p>We received your message and will get back to you soon.</p>
+            <p><strong>Your Details:</strong></p>
+            <p><strong>Email:</strong> ${formData.email}</p>
+            <p><strong>Subject:</strong> ${formData.subject}</p>
+            <p><strong>Message:</strong> ${formData.message}</p>
+          </body>
+        </html>
+      `,
+    };
+
     try {
-      const response = await axios.post('/api/contact', formData, {
+      await axios.post('https://api.brevo.com/v3/smtp/email', emailToAdmin, {
         headers: {
           'Content-Type': 'application/json',
         },
