@@ -19,7 +19,7 @@ export const Footer = () => {
                 <p className="text-xs sm:text-sm text-gray-300 font-thin">
                   Tezzeract (Pvt) Ltd specializing in digital scalability,
                   offering businesses seamless access to remote teams of highly
-                  skilled professionals.
+                  skilled professionals
                 </p>
               </div>
             </div>
