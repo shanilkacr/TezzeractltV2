@@ -39,7 +39,7 @@ export const CallToAction = () => {
   const maskImage = useMotionTemplate`radial-gradient(70% 70% at ${mouseX}px ${mouseY}px, black, transparent)`;
   
   return (
-    <section className=" flex flex-row text-white bg-[radial-gradient(220%_200%_at_center_0.1%,#01A6EB_10%,#0060EB_15%,#00398C_25%,#121212_40%)] py-[72px] relative overflow-hidden lg:h-[120vh] " >
+    <section className=" flex flex-row text-white bg-[radial-gradient(220%_200%_at_center_0.1%,#01A6EB_10%,#0060EB_15%,#00398C_25%,#121212_40%)] py-[72px] relative overflow-hidden lg:h-[120vh] md:h-[200vh] " >
       {/* Bottom arc circle behind the CTA */}
       <div className="absolute w-[1600px] sm:w-[4000px] sm:h-[1600px] lg:w-[4000px] lg:h-[2000px] rounded-[100%] left-1/2 -translate-x-1/2 border-2 border-[#84DBFF] bg-[radial-gradient(closest-side,#121212_84%,#003D8F)] bottom-[80%] z-0">
       </div>
