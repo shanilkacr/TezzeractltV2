@@ -182,7 +182,6 @@ export function GlowingEffectDemo() {
               AI-generated visuals and copy see{" "}
               <span className="text-pink-400 font-bold text-2xl sm:text-3xl"><AuroraText>2.1%</AuroraText></span> more engagement and lower ad spend by{" "}
               <span className="text-pink-400 font-bold text-2xl sm:text-3xl"><AuroraText>40%</AuroraText></span>
-              <WarpBackground className="absolute inset-0 z-0" />
             </>
           }
           description="AI produces ads that perform better, built in half the time."
