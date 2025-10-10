@@ -52,7 +52,7 @@ export function MainNav() {
             <a
               key={idx}
               href={item.link}
-              className="block px-4 py-2 text-neutral-600 dark:text-neutral-300 hover:bg-gray-100 dark:hover:bg-neutral-800 rounded-md"
+              className="block px-4 py-2 text-neutral-300 hover:bg-neutral-800 rounded-md"
               onClick={() => setMobileMenuOpen(false)}
             >
               {item.name}
