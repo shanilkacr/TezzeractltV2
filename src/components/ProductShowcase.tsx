@@ -21,7 +21,7 @@ export const ProductShowcase = () => {
           <div className="text-[120px] -mt-[200px] sm:-mt-[450px] font-medium text-white text-center">
             <span>
               <TextReveal className="text-lg font-bold">
-             {` Busywork is stealing your team's time. Let's fix that`}
+             {` Busywork is stealing your team's time.`}
 
               </TextReveal>
               <br />
