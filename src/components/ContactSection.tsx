@@ -194,10 +194,9 @@ export function ContactSection() {
     };
 
     try {
-      await axios.post('https://api.brevo.com/v3/smtp/email', emailToAdmin, {
-        headers: {
-          'Content-Type': 'application/json',
-        },
+      const response = await axios.post('/api/contact', {
+        emailToAdmin,
+        emailToCustomer,
       });
 
       if (response.status === 200) {

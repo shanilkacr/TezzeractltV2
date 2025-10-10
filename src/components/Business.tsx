@@ -321,9 +321,11 @@ const GridItem = ({ height, category, title, description, source, image }: GridI
           {/* Image */}
           {image && (
             <div className={`${getImagePositionClass(image.position)} z-10`}>
-              <img
+              <Image
                 src={image.src}
                 alt={image.alt}
+                width={200}
+                height={200}
                 className={`${getImageSizeClass(image.size)} rounded-lg object-cover opacity-80 hover:opacity-100 transition-opacity duration-300`}
               />
             </div>

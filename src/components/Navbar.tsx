@@ -1,6 +1,7 @@
 "use client";
 import { cn } from "../lib/utils";
 import { IconMenu2, IconX } from "@tabler/icons-react";
+import Image from "next/image";
 import logoImage from "../assets/images/Tezzeract Logo.png";
 
 import {
@@ -236,7 +237,7 @@ export const NavbarLogo = () => {
       href="#"
       className="relative z-20 mr-4 flex items-center space-x-2 px-2 py-3 pr-10 text-sm font-normal text-black"
     >
-<img src={logoImage.src} alt="logo" width={130} height={130}/>
+      <Image src={logoImage} alt="logo" width={130} height={130} />
     </a>
   );
 };
